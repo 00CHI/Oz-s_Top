@@ -3687,7 +3687,7 @@ GameObject:
   - component: {fileID: 1344749285}
   m_Layer: 0
   m_Name: Forest_Tile02 (9)
-  m_TagString: Ground
+  m_TagString: MovingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4284,7 +4284,7 @@ GameObject:
   - component: {fileID: 1501770693}
   m_Layer: 0
   m_Name: Forest_Tile02 (6)
-  m_TagString: Untagged
+  m_TagString: MovingGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

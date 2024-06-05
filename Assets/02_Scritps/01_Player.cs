@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Diagnostics;
+using System.Security.Cryptography;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -12,9 +15,15 @@ public class Player : MonoBehaviour
 
     public GameObject boxObject;
 
+    //Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+
+    //move  with Ground
+    private bool isOnMovingPlatform = false;
+    private Transform currentPlatform;
+
 
 
     float h = Input.GetAxisRaw("Horizontal");
@@ -29,20 +38,17 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Tag Ground");
             anim.SetBool("isJump", false);
             anim.SetBool("isRun", false);
             anim.SetBool("isJumpdown", false);
 
             //true anim
             anim.SetBool("isIdle", true);
-
-            
-           
         }
 
         //Box Tag
@@ -66,8 +72,40 @@ public class Player : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // 플레이어가 움직이는 플랫폼과 충돌하는지 확인
+        if (collision.gameObject.CompareTag("MovingGround"))
+        {
+            isOnMovingPlatform = false;
+            currentPlatform = collision.transform;
+
+        }
+    }
+    //수정중
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // 플레이어가 움직이는 플랫폼을 떠났는지 확인
+        if (collision.gameObject.CompareTag("MovingGround"))
+        {
+            isOnMovingPlatform = true;
+            currentPlatform = collision.transform;
+
+            //true anim
+            anim.SetBool("isIdle", true);
+        }
+    }
+    //수정중
+
     void Update()
     {
+        if(isOnMovingPlatform)
+        {
+            Vector3 platformVelocity = currentPlatform.GetComponent<Rigidbody2D>().velocity;
+            rigid.velocity = new Vector2(platformVelocity.x, rigid.velocity.y);
+        }
+
         //Derection flip Sprite //Run Anim
         if (Input.GetButtonUp("Jump"))
         {
@@ -153,5 +191,7 @@ public class Player : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
     }
+
+
 }
 
