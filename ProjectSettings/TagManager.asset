@@ -7,6 +7,8 @@ TagManager:
   - Siso
   - Box
   - Ground
+  - Woodman
+  - MovingGround
   layers:
   - Default
   - TransparentFX

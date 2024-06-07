@@ -5,20 +5,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Player move
     public float speed;
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
 
+    //Box object
     public GameObject boxObject;
 
+    //Moving with flatform
+    private bool isOnMovingPlatform = false;
+    private Transform currentPlatform;
+
+
+    //Sprite_Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
 
-
-    float h = Input.GetAxisRaw("Horizontal");
-    float j = Input.GetAxisRaw("Jump");
+    //Variable
+    private float h = Input.GetAxisRaw("Horizontal");
+    private float j = Input.GetAxisRaw("Jump");
 
 
     // Start is called before the first frame update
@@ -33,16 +41,12 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Tag Ground");
             anim.SetBool("isJump", false);
             anim.SetBool("isRun", false);
             anim.SetBool("isJumpdown", false);
 
             //true anim
-            anim.SetBool("isIdle", true);
-
-            
-           
+            anim.SetBool("isIdle", true);        
         }
 
         //Box Tag
@@ -56,18 +60,23 @@ public class Player : MonoBehaviour
                 anim.SetBool("isPull", true);
                 anim.SetBool("isRun", false);
                 anim.SetBool("isIdle", false);
+                anim.SetBool("isJump", false);
             }
         }
         else
         {
+            anim.SetBool("isJump", false);
             anim.SetBool("isPull", false);
             anim.SetBool("isRun", true);
             anim.SetBool("isIdle", true);
         }
     }
 
+
     void Update()
     {
+
+
         //Derection flip Sprite //Run Anim
         if (Input.GetButtonUp("Jump"))
         {
@@ -98,7 +107,6 @@ public class Player : MonoBehaviour
             //Jump Animation
             anim.SetBool("isJump", true);
         }
-
 
         //Jump Down
         if (rigid.velocity.y < -0.01f)
@@ -132,8 +140,54 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        // Player on Tile?
+        if (isOnMovingPlatform)
+        {
+            // Player move with Tile
+            Vector3 platformVelocity = currentPlatform.GetComponent<Rigidbody2D>().velocity;
+            rigid.velocity = new Vector2(platformVelocity.x, rigid.velocity.y);
+
+        }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Player on Tile? //타일보다 y 값이 높은 경우에도 애니메이션 재생
+        if (collision.gameObject.CompareTag("MovingGround"))
+        {
+
+            //StartCoroutine("MovingGroundCrtl");
+
+            //isOnMovingPlatform = true;
+            currentPlatform = collision.transform;
+
+            anim.SetBool("isJump", false);
+            anim.SetBool("isJumpdown", false);
+            anim.SetBool("isRun", false);
+
+            //True
+            anim.SetBool("isIdle", true);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        // Player exit Tile?
+        if (collision.gameObject.CompareTag("MovingGround"))
+        {
+            isOnMovingPlatform = false;
+            currentPlatform = null;
+
+            anim.SetBool("isJumpdown", false);
+
+
+            //True
+            anim.SetBool("isJump", true);
+            anim.SetBool("isRun", true);
+            anim.SetBool("isIdle", true);
+        }
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -153,5 +207,17 @@ public class Player : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
     }
+
+    //IEnumerator MovingGroundCrtl()
+    //{
+    //    while (gameObject.CompareTag("MovingGround"))
+    //    {
+    //        yield return new WaitForSeconds(0.2f);
+
+    //        anim.SetBool("isJumpdown", false) ;
+      
+    //        Debug.LogError(" 실행 후 프린트 되었는습니다.");
+    //    }
+    //}
 }
 
