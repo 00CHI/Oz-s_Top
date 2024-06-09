@@ -37,45 +37,9 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("isJump", false);
-            anim.SetBool("isRun", false);
-            anim.SetBool("isJumpdown", false);
-
-            //true anim
-            anim.SetBool("isIdle", true);        
-        }
-
-        //Box Tag
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            float yGap = transform.position.y - collision.gameObject.transform.position.y;
-            //Debug.LogError("GAP: " + yGap);
-
-            if (yGap < 1)
-            {
-                anim.SetBool("isPull", true);
-                anim.SetBool("isRun", false);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJump", false);
-            }
-        }
-        else
-        {
-            anim.SetBool("isJump", false);
-            anim.SetBool("isPull", false);
-            anim.SetBool("isRun", true);
-            anim.SetBool("isIdle", true);
-        }
-    }
-
 
     void Update()
     {
-
 
         //Derection flip Sprite //Run Anim
         if (Input.GetButtonUp("Jump"))
@@ -88,7 +52,6 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("isRun", false);
         }
-
         else if (rigid.velocity.normalized.x > 0 || rigid.velocity.normalized.x < 0)
         {
             anim.SetBool("isRun", true);
@@ -119,23 +82,21 @@ public class Player : MonoBehaviour
             // true anim
             anim.SetBool("isJumpdown", true);
 
+            //Gravity Ctrl
             rigid.AddForce(Vector2.down * jumpDown * Time.deltaTime);
         }
-
-        // Jump down -> Idle ¹æÁö
+        // Jump down -> Idle ï¿½ï¿½ï¿½ï¿½
         else
         {
             anim.SetBool("isJumpdown", false);
             anim.SetBool("isIdle", true);
         }
 
-
         //Derection flip Sprite //Run Anim
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             spriteRenderer.flipX = true;
         }
-
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             spriteRenderer.flipX = false;
@@ -145,26 +106,59 @@ public class Player : MonoBehaviour
         if (isOnMovingPlatform)
         {
             // Player move with Tile
-            Vector3 platformVelocity = currentPlatform.GetComponent<Rigidbody2D>().velocity;
-            rigid.velocity = new Vector2(platformVelocity.x, rigid.velocity.y);
+            Vector3 platformVelocity = currentPlatform.GetComponent<Collider>().GetComponent<Rigidbody2D>().velocity;
+            rigid.velocity = new Vector2(platformVelocity.x, platformVelocity.y);
+        }
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("isJump", false);
+            anim.SetBool("isRun", false);
+            anim.SetBool("isJumpdown", false);
+
+            //true anim
+            anim.SetBool("isIdle", true);
+        }
+
+        //Box Tag
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            float yGap = transform.position.y - collision.gameObject.transform.position.y;
+            //Debug.LogError("GAP: " + yGap);
+
+            if (yGap < 1)
+            {
+                anim.SetBool("isPull", true);
+                anim.SetBool("isRun", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJump", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("isJump", false);
+            anim.SetBool("isPull", false);
+            anim.SetBool("isRun", true);
+            anim.SetBool("isIdle", true);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Player on Tile? //Å¸ÀÏº¸´Ù y °ªÀÌ ³ôÀº °æ¿ì¿¡µµ ¾Ö´Ï¸ÞÀÌ¼Ç Àç»ý
+        // Player on Tile? //Å¸ï¿½Ïºï¿½ï¿½ï¿½ y ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½
         if (collision.gameObject.CompareTag("MovingGround"))
         {
 
-            //StartCoroutine("MovingGroundCrtl");
+            StartCoroutine("MovingGroundCrtl");
 
-            //isOnMovingPlatform = true;
+            isOnMovingPlatform = true;
             currentPlatform = collision.transform;
 
             anim.SetBool("isJump", false);
             anim.SetBool("isJumpdown", false);
-            anim.SetBool("isRun", false);
 
             //True
             anim.SetBool("isIdle", true);
@@ -183,8 +177,6 @@ public class Player : MonoBehaviour
 
 
             //True
-            anim.SetBool("isJump", true);
-            anim.SetBool("isRun", true);
             anim.SetBool("isIdle", true);
         }
     }
@@ -208,16 +200,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    //IEnumerator MovingGroundCrtl()
-    //{
-    //    while (gameObject.CompareTag("MovingGround"))
-    //    {
-    //        yield return new WaitForSeconds(0.2f);
+    IEnumerator MovingGroundCrtl()
+    {
+        while (gameObject.CompareTag("MovingGround"))
+        {
+            yield return new WaitForSeconds(0.2f);
 
-    //        anim.SetBool("isJumpdown", false) ;
-      
-    //        Debug.LogError(" ½ÇÇà ÈÄ ÇÁ¸°Æ® µÇ¾ú´Â½À´Ï´Ù.");
-    //    }
-    //}
+            anim.SetBool("isJumpdown", false);
+
+            Debug.LogError(" ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ç¾ï¿½ï¿½Â½ï¿½ï¿½Ï´ï¿½.");
+        }
+    }
 }
 
