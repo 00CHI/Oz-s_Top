@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -13,18 +14,13 @@ public class Player : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
 
-    public GameObject boxObject;
+    public GameObject panel;
+    public GameObject witchArt;
 
     //Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
-
-    //move  with Ground
-    private bool isOnMovingPlatform = false;
-    private Transform currentPlatform;
-
-
 
     float h = Input.GetAxisRaw("Horizontal");
     float j = Input.GetAxisRaw("Jump");
@@ -72,40 +68,8 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // 플레이어가 움직이는 플랫폼과 충돌하는지 확인
-        if (collision.gameObject.CompareTag("MovingGround"))
-        {
-            isOnMovingPlatform = false;
-            currentPlatform = collision.transform;
-
-        }
-    }
-    //수정중
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        // 플레이어가 움직이는 플랫폼을 떠났는지 확인
-        if (collision.gameObject.CompareTag("MovingGround"))
-        {
-            isOnMovingPlatform = true;
-            currentPlatform = collision.transform;
-
-            //true anim
-            anim.SetBool("isIdle", true);
-        }
-    }
-    //수정중
-
     void Update()
     {
-        if(isOnMovingPlatform)
-        {
-            Vector3 platformVelocity = currentPlatform.GetComponent<Rigidbody2D>().velocity;
-            rigid.velocity = new Vector2(platformVelocity.x, rigid.velocity.y);
-        }
-
         //Derection flip Sprite //Run Anim
         if (Input.GetButtonUp("Jump"))
         {
@@ -136,7 +100,6 @@ public class Player : MonoBehaviour
             //Jump Animation
             anim.SetBool("isJump", true);
         }
-
 
         //Jump Down
         if (rigid.velocity.y < -0.01f)
@@ -172,7 +135,6 @@ public class Player : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -191,6 +153,30 @@ public class Player : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Witch01"))
+        {
+            if (panel == null)
+            {
+                return;
+            }
+
+            panel.SetActive(true);
+
+            if (witchArt == null)
+
+            {
+                return;
+            }
+
+            witchArt.SetActive(true);
+        }
+    }
+
+
+
 
 
 }

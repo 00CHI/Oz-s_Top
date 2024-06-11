@@ -8,6 +8,9 @@ TagManager:
   - Box
   - Ground
   - MovingGround
+  - WitchDialogue
+  - Witch01
+  - WitchArt
   layers:
   - Default
   - TransparentFX
