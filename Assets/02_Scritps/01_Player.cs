@@ -14,8 +14,13 @@ public class Player : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
 
-    public GameObject panel;
-    public GameObject witchArt;
+    [SerializeField]
+    private GameObject panel;
+    [SerializeField]
+    private GameObject witchArt;
+    [SerializeField]
+    private GameObject doroshiArt;
+
 
     //Anim
     Rigidbody2D rigid;
@@ -156,9 +161,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Witch01"))
+        //¾ÈµÊ ±³¼ö´Ô²² ¿©Âåº¸±â
+       // bool keyDown = Input.GetKeyDown(KeyCode.V);
+
+        bool witchEnter = collision.gameObject.CompareTag("Witch01");
+
+        if (witchEnter)
         {
+            UnityEngine.Debug.Log("Find Witch");
+
+            //UnityEngine.Debug.Log("Down Key");
+
             if (panel == null)
+
             {
                 return;
             }
@@ -172,11 +187,49 @@ public class Player : MonoBehaviour
             }
 
             witchArt.SetActive(true);
+
+            if (doroshiArt == null)
+
+            {
+                return;
+            }
+
+            doroshiArt.SetActive(true);
+
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        bool witchExit = collision.gameObject.CompareTag("Witch01");
 
+        if (witchExit)
+        {
+            if (panel == null)
 
+            {
+                return;
+            }
+
+            panel.SetActive(false);
+
+            if (witchArt == null)
+
+            {
+                return;
+            }
+
+            witchArt.SetActive(false);
+
+            if (doroshiArt == null)
+
+            {
+                return;
+            }
+
+            doroshiArt.SetActive(false);
+        }
+    }
 
 
 }

@@ -11,6 +11,7 @@ TagManager:
   - WitchDialogue
   - Witch01
   - WitchArt
+  - doroshiArt
   layers:
   - Default
   - TransparentFX
