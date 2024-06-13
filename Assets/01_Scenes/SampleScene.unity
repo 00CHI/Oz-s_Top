@@ -6124,6 +6124,7 @@ GameObject:
   - component: {fileID: 1798526563}
   - component: {fileID: 1798526565}
   - component: {fileID: 1798526564}
+  - component: {fileID: 1798526568}
   - component: {fileID: 1798526567}
   - component: {fileID: 1798526566}
   m_Layer: 0
@@ -6281,6 +6282,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   witchTalk: {fileID: 0}
   WitchDialogue: {fileID: 0}
+--- !u!114 &1798526568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798526562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6738a3076b049214e820598e1d5e3f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 500
+  isNPC: 0
 --- !u!1 &1842892478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7171,8 +7186,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 7766849399124720515}
   m_SourcePrefab: {fileID: 100100000, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+--- !u!1 &7766849399124720514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+  m_PrefabInstance: {fileID: 7766849399124720513}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7766849399124720515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7766849399124720514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6738a3076b049214e820598e1d5e3f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 100
+  isNPC: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7184,5 +7221,5 @@ SceneRoots:
   - {fileID: 671077101}
   - {fileID: 470383814}
   - {fileID: 1404938455}
-  - {fileID: 2021740101}
   - {fileID: 396805897}
+  - {fileID: 2021740101}
