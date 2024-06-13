@@ -12,6 +12,7 @@ TagManager:
   - Witch01
   - WitchArt
   - doroshiArt
+  - WitchPanel
   layers:
   - Default
   - TransparentFX

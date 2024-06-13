@@ -6,6 +6,8 @@ using System.Security.Cryptography;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using TMPro;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+
 
 public class Player : MonoBehaviour
 {
@@ -13,13 +15,18 @@ public class Player : MonoBehaviour
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
+    public GameObject witchObj;
 
+    //GameObject
     [SerializeField]
     private GameObject panel;
     [SerializeField]
     private GameObject witchArt;
     [SerializeField]
     private GameObject doroshiArt;
+
+    //Scripts
+    ObjManager objManager;
 
 
     //Anim
@@ -138,99 +145,93 @@ public class Player : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
-    }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //Move maxSpeed
-        float h = Input.GetAxisRaw("Horizontal");
+        bool keyDown = Input.GetKeyDown(KeyCode.S);
 
-        rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
 
-        if (rigid.velocity.x > maxSpeed)
+        if (keyDown == true)
         {
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        }
-
-        else if (rigid.velocity.x < maxSpeed * (-1))//Left Max speed
-        {
-            rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //¾ÈµÊ ±³¼ö´Ô²² ¿©Âåº¸±â
-       // bool keyDown = Input.GetKeyDown(KeyCode.V);
-
-        bool witchEnter = collision.gameObject.CompareTag("Witch01");
-
-        if (witchEnter)
-        {
-            UnityEngine.Debug.Log("Find Witch");
-
-            //UnityEngine.Debug.Log("Down Key");
-
-            if (panel == null)
-
+            if (witchObj)
             {
-                return;
+                UnityEngine.Debug.Log("find Witch");
+
+                if (panel == null)
+
+                {
+                    return;
+                }
+
+                panel.SetActive(true);
+
+                if (witchArt == null)
+
+                {
+                    return;
+                }
+
+                witchArt.SetActive(true);
+
+                if (doroshiArt == null)
+
+                {
+                    return;
+                }
+
+                doroshiArt.SetActive(true);
+
             }
-
-            panel.SetActive(true);
-
-            if (witchArt == null)
-
-            {
-                return;
-            }
-
-            witchArt.SetActive(true);
-
-            if (doroshiArt == null)
-
-            {
-                return;
-            }
-
-            doroshiArt.SetActive(true);
-
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        bool witchExit = collision.gameObject.CompareTag("Witch01");
-
-        if (witchExit)
+        // Update is called once per frame
+        void FixedUpdate()
         {
-            if (panel == null)
+            //Move maxSpeed
+            float h = Input.GetAxisRaw("Horizontal");
 
+            rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
+
+            if (rigid.velocity.x > maxSpeed)
             {
-                return;
+                rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
             }
 
-            panel.SetActive(false);
-
-            if (witchArt == null)
-
+            else if (rigid.velocity.x < maxSpeed * (-1))//Left Max speed
             {
-                return;
+                rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
             }
-
-            witchArt.SetActive(false);
-
-            if (doroshiArt == null)
-
-            {
-                return;
-            }
-
-            doroshiArt.SetActive(false);
         }
-    }
 
+        void OnTriggerExit2D(Collider2D collision)
+        {
+            bool witchExit = collision.gameObject.CompareTag("Witch01");
 
+            if (witchExit)
+            {
+                if (panel == null)
+
+                {
+                    return;
+                }
+
+                panel.SetActive(false);
+
+                if (witchArt == null)
+
+                {
+                    return;
+                }
+
+                witchArt.SetActive(false);
+
+                if (doroshiArt == null)
+
+                {
+                    return;
+                }
+
+                doroshiArt.SetActive(false);
+            }
+        }
 }
 

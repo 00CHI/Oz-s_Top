@@ -3567,12 +3567,12 @@ GameObject:
   - component: {fileID: 1106226021}
   - component: {fileID: 1106226019}
   m_Layer: 5
-  m_Name: Witch_Dialogue
-  m_TagString: WitchDialogue
+  m_Name: Witch01_Panel
+  m_TagString: WitchPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1106226018
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3584,7 +3584,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1284538222}
   m_Father: {fileID: 1404938455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -3643,7 +3644,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witchTalk: {fileID: 1284538223}
-  WitchDialogue: {fileID: 0}
+  panel: {fileID: 0}
+  isWitch: 0
 --- !u!1 &1147674494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4254,11 +4256,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1404938455}
+  m_Father: {fileID: 1106226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 60, y: -685}
+  m_AnchoredPosition: {x: 50, y: -25}
   m_SizeDelta: {x: 1000, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1284538223
@@ -4932,7 +4934,6 @@ RectTransform:
   m_Children:
   - {fileID: 1911997456}
   - {fileID: 1106226018}
-  - {fileID: 1284538222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5631,6 +5632,56 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &1557819237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557819239}
+  - component: {fileID: 1557819238}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1557819238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557819237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0733e0cd040d2bb4fb5f8af38b074672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  witch01Dialogue: {fileID: 1106226021}
+  talkPanel: {fileID: 1106226017}
+  talkIndex: 0
+  talkText: {fileID: 1284538223}
+  scanWitch01: {fileID: 1798526562}
+  isAction: 0
+--- !u!4 &1557819239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557819237}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1590560120
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,11 +6175,10 @@ GameObject:
   - component: {fileID: 1798526563}
   - component: {fileID: 1798526565}
   - component: {fileID: 1798526564}
-  - component: {fileID: 1798526568}
   - component: {fileID: 1798526567}
   - component: {fileID: 1798526566}
   m_Layer: 0
-  m_Name: Witch01_Idle
+  m_Name: Witch01
   m_TagString: Witch01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6143,7 +6193,7 @@ Transform:
   m_GameObject: {fileID: 1798526562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8, y: 4.6, z: 0}
+  m_LocalPosition: {x: -8.72, y: 13.43, z: 0}
   m_LocalScale: {x: 1.6, y: 1.6, z: 1.6}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -6281,21 +6331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   witchTalk: {fileID: 0}
-  WitchDialogue: {fileID: 0}
---- !u!114 &1798526568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798526562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6738a3076b049214e820598e1d5e3f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 500
-  isNPC: 0
+  panel: {fileID: 0}
+  isWitch: 0
 --- !u!1 &1842892478
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,6 +7197,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1494162559}
     - target: {fileID: 4308115597890870089, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+      propertyPath: witchObj
+      value: 
+      objectReference: {fileID: 1798526562}
+    - target: {fileID: 4308115597890870089, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       propertyPath: boxObject
       value: 
       objectReference: {fileID: 1731782452}
@@ -7186,34 +7227,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 7766849399124720515}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
---- !u!1 &7766849399124720514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
-  m_PrefabInstance: {fileID: 7766849399124720513}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7766849399124720515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7766849399124720514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6738a3076b049214e820598e1d5e3f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 100
-  isNPC: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1557819239}
   - {fileID: 7766849399124720513}
   - {fileID: 34740338}
   - {fileID: 1437251926}
