@@ -25,9 +25,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject doroshiArt;
 
-    //Scripts
-    ObjManager objManager;
-
 
     //Anim
     Rigidbody2D rigid;
