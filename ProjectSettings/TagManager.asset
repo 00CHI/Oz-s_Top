@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Woodman
   - MovingGround
+  - Scissor
   layers:
   - Default
   - TransparentFX
