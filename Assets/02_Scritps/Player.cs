@@ -2,22 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
+    ItemObject itemObject;
+
+
     //Player move
     public float speed;
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
 
-    //Box object
+    //Object
     public GameObject boxObject;
+    public bool getScissor01 = false;
+    public bool getScissor02 = false;
+    public bool getScissor03 = false;
+
+    public bool tagScissor01 = false;
+    public bool tagScissor02 = false;
+    public bool tagScissor03 = false;
+    public GameObject mergeButton;
+
+    //_Scissor text control
+    public TextMeshProUGUI prompText;
+    public TextMeshProUGUI textItemName;
+    public TextMeshProUGUI textItemDesc;
+    public enum InfoType { Scissor01, Scissor02, Scissor03 }
+    public InfoType type;
+
+    public GameObject scissor01;
+    public GameObject scissor02;
+    public GameObject scissor03;
+
+    public GameObject Image_scissor01;
+    public GameObject Image_scissor02;
+    public GameObject Image_scissor03;
+    public GameObject Image_MagicScissor;
+
 
     //Moving with flatform
     private bool isOnMovingPlatform = false;
     private Transform currentPlatform;
-
 
     //Sprite_Anim
     Rigidbody2D rigid;
@@ -28,6 +57,13 @@ public class Player : MonoBehaviour
     private float h = Input.GetAxisRaw("Horizontal");
     private float j = Input.GetAxisRaw("Jump");
 
+    //UI
+    public GameObject inventoryPanel;
+    //public TextMeshProUGUI textItemName;
+    //public TextMeshProUGUI textItemDesc;
+
+
+
 
     // Start is called before the first frame update
     void Awake()
@@ -35,12 +71,22 @@ public class Player : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        inventoryPanel.gameObject.SetActive(false);
+        mergeButton.SetActive(false);
+
+        //_Scissor
+        Image_scissor01.gameObject.SetActive(false);
+        Image_scissor02.gameObject.SetActive(false);
+        Image_scissor03.gameObject.SetActive(false);
+        Image_MagicScissor.gameObject.SetActive(false);
+
+        textItemName.gameObject.SetActive(false);
+        textItemDesc.gameObject.SetActive(false);
 
     }
 
     void Update()
     {
-
         //Derection flip Sprite //Run Anim
         if (Input.GetButtonUp("Jump"))
         {
@@ -85,7 +131,7 @@ public class Player : MonoBehaviour
             //Gravity Ctrl
             rigid.AddForce(Vector2.down * jumpDown * Time.deltaTime);
         }
-        // Jump down -> Idle ï¿½ï¿½ï¿½ï¿½
+        // Jump down -> Idle 
         else
         {
             anim.SetBool("isJumpdown", false);
@@ -109,6 +155,99 @@ public class Player : MonoBehaviour
             Vector3 platformVelocity = currentPlatform.GetComponent<Collider>().GetComponent<Rigidbody2D>().velocity;
             rigid.velocity = new Vector2(platformVelocity.x, platformVelocity.y);
         }
+
+
+        //Inventory
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        //_Scissor
+
+        if (tagScissor01 == true)
+        {
+            SetPrompText();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                
+
+
+                Image_scissor01.gameObject.SetActive(true);
+                getScissor01 = true;
+
+                Destroy(scissor01, 0.2f);
+            }
+
+        }
+        if (tagScissor01 == false)
+        {
+            OutPrompText();
+        }
+
+
+
+        if (tagScissor02 == true)
+        {
+            SetPrompText();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                Image_scissor02.gameObject.SetActive(true);
+                getScissor02 = true;
+
+                Destroy(scissor02, 0.2f);
+            }
+        }
+        if (tagScissor02 == false)
+        {
+            OutPrompText();
+        }
+
+        if (tagScissor03 == true)
+        {
+            SetPrompText();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                Image_scissor03.gameObject.SetActive(true);
+                getScissor03 = true;
+
+                Destroy(scissor03, 0.2f);
+            }
+        }
+        if (tagScissor03 == false)
+        {
+            OutPrompText();
+        }
+
+        if (getScissor01 == true && getScissor02 == true && getScissor03 == true)
+        {
+            mergeButton.SetActive(true);
+        }
+    }
+
+    //_Scissor
+    private void SetPrompText()
+    {
+        prompText.gameObject.SetActive(true);
+        prompText.text = "[ E ]¸¦ ´­·¯ ¾ÆÀÌÅÛ È¹µæ";
+    }
+    private void OutPrompText()
+    {
+        prompText.gameObject.SetActive(false);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -144,11 +283,11 @@ public class Player : MonoBehaviour
             anim.SetBool("isRun", true);
             anim.SetBool("isIdle", true);
         }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Player on Tile? //Å¸ï¿½Ïºï¿½ï¿½ï¿½ y ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½
         if (collision.gameObject.CompareTag("MovingGround"))
         {
 
@@ -163,6 +302,20 @@ public class Player : MonoBehaviour
             //True
             anim.SetBool("isIdle", true);
         }
+
+        if (collision.gameObject.CompareTag("Scissor01"))
+        {
+            tagScissor01 = true;
+        }
+        if (collision.gameObject.CompareTag("Scissor02"))
+        {
+            tagScissor02 = true;
+        }
+        if (collision.gameObject.CompareTag("Scissor03"))
+        {
+            tagScissor03 = true;
+        }
+
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -179,6 +332,21 @@ public class Player : MonoBehaviour
             //True
             anim.SetBool("isIdle", true);
         }
+
+        //_Scissor
+        if (collision.gameObject.CompareTag("Scissor01"))
+        {
+            tagScissor01 = false;
+        }
+        if (collision.gameObject.CompareTag("Scissor02"))
+        {
+            tagScissor02 = false;
+        }
+        if (collision.gameObject.CompareTag("Scissor03"))
+        {
+            tagScissor03 = false;
+        }
+
     }
 
     // Update is called once per frame
@@ -207,9 +375,16 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
 
             anim.SetBool("isJumpdown", false);
-
-            Debug.LogError(" ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ç¾ï¿½ï¿½Â½ï¿½ï¿½Ï´ï¿½.");
         }
+    }
+
+    public void OnMergeButtonClick()
+    {
+        Image_scissor01.SetActive(false);
+        Image_scissor02.SetActive(false);
+        Image_scissor03.SetActive(false);
+
+        Image_MagicScissor.SetActive(true);
     }
 }
 

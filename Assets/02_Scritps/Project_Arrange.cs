@@ -44,6 +44,16 @@ public class Project_Arrange : MonoBehaviour
            (시간 남을 시  : 특정 입력(버튼)을 받으면 움직이는 상자. ) 
         */
 
+        //**2024.07.28**
+        /* 인벤토리 UI 생성
+         * 인벤토리 스크립트 작성
+         */
+
+
+        //**2024.08.01**
+        /* 인벤토리 UI 재생성
+         * 인벤토리 스크립트 수정
+         */
     }
 
     // Update is called once per frame

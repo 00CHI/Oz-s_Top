@@ -10,6 +10,9 @@ TagManager:
   - Woodman
   - MovingGround
   - Scissor
+  - Scissor01
+  - Scissor02
+  - Scissor03
   layers:
   - Default
   - TransparentFX
@@ -17,8 +20,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Interactable
   - 
   - 
   - 
