@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9220820595231201369}
   - component: {fileID: 832719934116738696}
   - component: {fileID: 8552198256222880732}
+  - component: {fileID: 1456080572972872337}
   - component: {fileID: 6828883944318218978}
   - component: {fileID: 4308115597890870089}
   m_Layer: 0
@@ -116,7 +117,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7228567572976740820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -154,6 +155,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.92}
   m_EdgeRadius: 0
+--- !u!70 &1456080572972872337
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228567572976740820}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.05}
+  m_Size: {x: 0.4, y: 1}
+  m_Direction: 0
 --- !u!50 &6828883944318218978
 Rigidbody2D:
   serializedVersion: 4
@@ -197,3 +233,23 @@ MonoBehaviour:
   jumpDown: -50
   jumpPower: 13
   maxSpeed: 4
+  boxObject: {fileID: 0}
+  getScissor01: 0
+  getScissor02: 0
+  getScissor03: 0
+  tagScissor01: 0
+  tagScissor02: 0
+  tagScissor03: 0
+  mergeButton: {fileID: 0}
+  prompText: {fileID: 0}
+  textItemName: {fileID: 0}
+  textItemDesc: {fileID: 0}
+  type: 0
+  scissor01: {fileID: 0}
+  scissor02: {fileID: 0}
+  scissor03: {fileID: 0}
+  Image_scissor01: {fileID: 0}
+  Image_scissor02: {fileID: 0}
+  Image_scissor03: {fileID: 0}
+  Image_MagicScissor: {fileID: 0}
+  inventoryPanel: {fileID: 0}

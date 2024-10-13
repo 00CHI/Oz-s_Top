@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 {
     ItemObject itemObject;
 
-
     //Player move
     public float speed;
     public float jumpDown;
@@ -54,8 +53,8 @@ public class Player : MonoBehaviour
     Animator anim;
 
     //Variable
-    private float h = Input.GetAxisRaw("Horizontal");
-    private float j = Input.GetAxisRaw("Jump");
+    //private float h = Input.GetAxisRaw("Horizontal");
+    //private float j = Input.GetAxisRaw("Jump");
 
     //UI
     public GameObject inventoryPanel;
@@ -366,25 +365,6 @@ public class Player : MonoBehaviour
         {
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
-    }
-
-    IEnumerator MovingGroundCrtl()
-    {
-        while (gameObject.CompareTag("MovingGround"))
-        {
-            yield return new WaitForSeconds(0.2f);
-
-            anim.SetBool("isJumpdown", false);
-        }
-    }
-
-    public void OnMergeButtonClick()
-    {
-        Image_scissor01.SetActive(false);
-        Image_scissor02.SetActive(false);
-        Image_scissor03.SetActive(false);
-
-        Image_MagicScissor.SetActive(true);
     }
 }
 
