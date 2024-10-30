@@ -22,6 +22,16 @@ public class Runestone : MonoBehaviour
 
     //Sprite_Anim
     Animator anim;
+
+    public enum COLORTILE
+    {
+        COLORTILE_redObj,
+        COLORTILE_yellowObj,
+        COLORTILE_greenObj,
+        COLORTILE_blueObj,
+        COLORTILE_puppleObj,
+        COLORTILE_end
+    }
     
 
 
@@ -46,30 +56,111 @@ public class Runestone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPlayer == true)
+        COLORTILE colortile = COLORTILE.COLORTILE_end;
+
+        switch (colortile)
         {
+            case COLORTILE.COLORTILE_redObj:
 
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                anim.SetBool("isStone", true);
-                anim.SetTrigger("isStoneEffect");
-                activityText.gameObject.SetActive(false);
+                if (isPlayer == true)
+                {
 
-                //Invoke("SetFalse()", 0.2f);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        anim.SetBool("isStone", true);
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
 
-                redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
-                StartCoroutine(MoveRedTile(redTile));
+                        //Invoke("SetFalse()", 0.2f);
 
-            }
+                        redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
+                        StartCoroutine(MoveRedTile(redTile));
+
+                    }
+                }
+                break;
+            case COLORTILE.COLORTILE_yellowObj:
+                if (isPlayer == true)
+                {
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        anim.SetBool("isStone", true);
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+                        //Invoke("SetFalse()", 0.2f);
+
+                        redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
+                        StartCoroutine(MoveRedTile(redTile));
+
+                    }
+                }
+                break;
+            case COLORTILE.COLORTILE_greenObj:
+                if (isPlayer == true)
+                {
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        anim.SetBool("isStone", true);
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+                        //Invoke("SetFalse()", 0.2f);
+
+                        redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
+                        StartCoroutine(MoveRedTile(redTile));
+
+                    }
+                }
+                break;
+            case COLORTILE.COLORTILE_blueObj:
+                if (isPlayer == true)
+                {
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        anim.SetBool("isStone", true);
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+                        //Invoke("SetFalse()", 0.2f);
+
+                        redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
+                        StartCoroutine(MoveRedTile(redTile));
+
+                    }
+                }
+                break;
+            case COLORTILE.COLORTILE_puppleObj:
+                if (isPlayer == true)
+                {
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        anim.SetBool("isStone", true);
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+                        //Invoke("SetFalse()", 0.2f);
+
+                        redTilePosition = redTile.transform.position - new Vector3(0, moveDistance, 0);
+                        StartCoroutine(MoveRedTile(redTile));
+
+                    }
+                }
+                break;
         }
+       
 
     }
 
-    IEnumerator MoveRedTile(GameObject redObj)
+    IEnumerator MoveRedTile(GameObject COLORTILE_redObj)
     {
-        while(redObj.transform.position != redTilePosition)
+        while(COLORTILE_redObj.transform.position != redTilePosition)
         {
-            redObj.transform.position = Vector3.MoveTowards(redObj.transform.position, redTilePosition, moveSpeed * Time.deltaTime);
+            COLORTILE_redObj.transform.position = Vector3.MoveTowards(COLORTILE_redObj.transform.position, redTilePosition, moveSpeed * Time.deltaTime);
             yield return null;
         }
     }
