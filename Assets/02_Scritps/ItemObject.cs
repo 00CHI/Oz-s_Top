@@ -30,8 +30,6 @@ public class ItemObject : MonoBehaviour
         tagScissor01 = false;
         tagScissor02 = false;
         tagScissor03 = false;
-
-
     }
 
     private void Update()
