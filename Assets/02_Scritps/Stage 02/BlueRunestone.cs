@@ -47,7 +47,7 @@ public class BlueRunestone : MonoBehaviour
         if (isPlayer == true)
         {
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)&& Tile.transform.position.y > 13.76f)
             {
                 anim.SetBool("isStone", true);
                 //anim.SetBool("isStoneEffect", true);
