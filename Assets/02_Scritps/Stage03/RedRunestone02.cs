@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum eTYPE
-{
-    NONE_TILE,
-    RED_TILE,
-    GREEN_TILE,
-    PURPLE_TILE,
+//public enum TYPE
+//{
+//    NONE_TILE,
+//    RED_TILE,
+//    GREEN_TILE,
+//    PURPLE_TILE,
 
-}
+//}
 
 public class RedRunestone02 : MonoBehaviour
 {
@@ -46,9 +46,10 @@ public class RedRunestone02 : MonoBehaviour
     public bool isPlayer = false;
     public bool isKeyE = false;
 
-    eTYPE Type = eTYPE.NONE_TILE;
+    //eTYPE Type = eTYPE.NONE_TILE;
 
-    public eTYPE TYPE;
+    //public eTYPE TYPE;
+      //public TYPE TYPE;
 
 
 
@@ -63,7 +64,7 @@ public class RedRunestone02 : MonoBehaviour
         isKeyE = false;
 
         activityText.gameObject.SetActive(false);
-        moveDistance01 = 1.5f; // 타일이 내려오는 거리
+        //moveDistance01 = 1.5f; // 타일이 내려오는 거리
 
 
         //시작할 때 타겟 오브젝트의 현재 위치를 저장
@@ -79,67 +80,61 @@ public class RedRunestone02 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            isKeyE = true;
-        }
 
         if (isPlayer == true)
         {
-            switch(TYPE)
+            if (Input.GetKeyDown(KeyCode.R) && count == 0)
             {
-                case eTYPE.RED_TILE:
-                    if (isKeyE == true && count == 0)
-                    {
-                        anim.SetTrigger("isStoneEffect");
-                        activityText.gameObject.SetActive(false);
+                anim.SetTrigger("isStoneEffect");
+                activityText.gameObject.SetActive(false);
 
-                        TilePosition01 = Tile01.transform.position - new Vector3(moveDistance01, 0, 0);
-                        MoveRedTile(Tile01, TilePosition01);
+                TilePosition01 = Tile01.transform.position - new Vector3(moveDistance01, 0, 0);
+                StartCoroutine(MoveRedTile(Tile01, TilePosition01));
 
-                        TilePosition02 = Tile02.transform.position - new Vector3(moveDistance02, 0, 0);
-                        MoveRedTile(Tile02, TilePosition02);
 
-                        TilePosition03 = Tile03.transform.position - new Vector3(0, moveDistance03, 0);
-                        MoveRedTile(Tile03, TilePosition03);
+                TilePosition02 = Tile02.transform.position - new Vector3(moveDistance02, 0, 0);
+                StartCoroutine(MoveRedTile(Tile02, TilePosition02));
 
-                        TilePosition04 = Tile04.transform.position - new Vector3(0, moveDistance04, 0);
-                        MoveRedTile(Tile04, TilePosition04);
 
-                        //count = 1;
+                TilePosition03 = Tile03.transform.position - new Vector3(0, moveDistance03, 0);
+                StartCoroutine(MoveRedTile(Tile03, TilePosition03));
 
-                    }
-                    else if(isKeyE == true && count == 1)
-                    {
-                        anim.SetTrigger("isStoneEffect");
-                        activityText.gameObject.SetActive(false);
 
-                        TilePosition01 = Tile01.transform.position - new Vector3(-moveDistance01, 0, 0);
-                        MoveRedTile(Tile01, TilePosition01);
+                TilePosition04 = Tile04.transform.position - new Vector3(0, moveDistance04, 0);
+                StartCoroutine(MoveRedTile(Tile04, TilePosition04));
 
-                        TilePosition02 = Tile02.transform.position - new Vector3(-moveDistance02, 0, 0);
-                        MoveRedTile(Tile02, TilePosition02);
 
-                        TilePosition03 = Tile03.transform.position - new Vector3(0, -moveDistance03, 0);
-                        MoveRedTile(Tile03, TilePosition03);
+                count = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.R) && count == 1)
+            {
+                anim.SetTrigger("isStoneEffect");
+                activityText.gameObject.SetActive(false);
 
-                        TilePosition04 = Tile04.transform.position - new Vector3(0, -moveDistance04, 0);
-                        MoveRedTile(Tile04, TilePosition04);
+                TilePosition01 = Tile01.transform.position - new Vector3(-moveDistance01, 0, 0);
+                StartCoroutine(MoveRedTile(Tile01, TilePosition01));
 
-                        //count = 0;
 
-                    }
-                    break;
-                case eTYPE.GREEN_TILE:                 
-                    break;
+                TilePosition02 = Tile02.transform.position - new Vector3(-moveDistance02, 0, 0);
+                StartCoroutine(MoveRedTile(Tile02, TilePosition02));
+
+
+                TilePosition03 = Tile03.transform.position - new Vector3(0, -moveDistance03, 0);
+                StartCoroutine(MoveRedTile(Tile03, TilePosition03));
+
+
+                TilePosition04 = Tile04.transform.position - new Vector3(0, -moveDistance04, 0);
+                StartCoroutine(MoveRedTile(Tile04, TilePosition04));
+
+
+                count = 0;
 
             }
+
         }
-
-
     }
 
-    void MoveRedTile(GameObject Obj, Vector3 TilePosition)
+    IEnumerator MoveRedTile(GameObject Obj, Vector3 TilePosition)
     {
         //WaitForSeconds ws = new WaitForSeconds(0.1f);
 
@@ -149,13 +144,16 @@ public class RedRunestone02 : MonoBehaviour
 
             //if (Type == TYPE)
             //{
-                if (Obj.transform.position != TilePosition)
+                while (Obj.transform.position != TilePosition)
                 {
                     Obj.transform.position = Vector3.MoveTowards(Obj.transform.position, TilePosition, moveSpeed * Time.deltaTime);
+                    yield return null;
+
 
                 }
-            //}
-       // }
+
+        //}
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D coll)

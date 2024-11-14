@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+//public enum eTYPE
+//{
+//    NONE_TILE,
+//    RED_TILE,
+//    GREEN_TILE,
+//    BULE_TILE,
+//    PURPLE_TILE
+//}
 
 public class GreenRunestone02 : MonoBehaviour
 {
+
 
     //_Scissor text control
     public TextMeshProUGUI activityText;
@@ -28,7 +37,7 @@ public class GreenRunestone02 : MonoBehaviour
     private Vector3 TilePosition03; 
     private Vector3 TilePosition04;
 
-    private int count = 0;
+    private int count02 = 0;
 
     //public int limitMove = 0;
 
@@ -38,6 +47,9 @@ public class GreenRunestone02 : MonoBehaviour
 
     //Sprite_Anim
     Animator anim;
+
+    //public TYPE TYPE;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -66,47 +78,53 @@ public class GreenRunestone02 : MonoBehaviour
 
         if (isPlayer == true)
         {
+            //switch(TYPE)
+            //{
+               //case TYPE.GREEN_TILE:
+                    if (Input.GetKeyDown(KeyCode.E) && count02 == 0)
+                    {
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+                        TilePosition01 = Tile01.transform.position - new Vector3(0, moveDistance01, 0);
+                        StartCoroutine(MoveGreenTile(Tile01, TilePosition01));
+
+                        TilePosition02 = Tile02.transform.position - new Vector3(0, moveDistance02, 0);
+                        StartCoroutine(MoveGreenTile(Tile02, TilePosition02));
+
+                        TilePosition03 = Tile03.transform.position - new Vector3(0, moveDistance03, 0);
+                        StartCoroutine(MoveGreenTile(Tile03, TilePosition03));
+
+                        TilePosition04 = Tile04.transform.position - new Vector3(0, moveDistance04, 0);
+                        StartCoroutine(MoveGreenTile(Tile04, TilePosition04));
+
+                        count02 = 1;
+
+                    }
+                    else if (Input.GetKeyDown(KeyCode.E) && count02 == 1)
+                    {
+                        anim.SetTrigger("isStoneEffect");
+                        activityText.gameObject.SetActive(false);
+
+
+                        TilePosition01 = Tile01.transform.position - new Vector3(0, -moveDistance01, 0);
+                        StartCoroutine(MoveGreenTile(Tile01, TilePosition01));
+
+                        TilePosition02 = Tile02.transform.position - new Vector3(0, -moveDistance02, 0);
+                        StartCoroutine(MoveGreenTile(Tile02, TilePosition02));
+
+                        TilePosition03 = Tile03.transform.position - new Vector3(0, -moveDistance03, 0);
+                        StartCoroutine(MoveGreenTile(Tile03, TilePosition03));
+
+                        TilePosition04 = Tile04.transform.position - new Vector3(0, -moveDistance04, 0);
+                        StartCoroutine(MoveGreenTile(Tile04, TilePosition04));
+
+                        count02 = 0;
+
+                    }
+                    //break;
+            //}
             
-            if (Input.GetKeyDown(KeyCode.E) && count == 0)
-            {
-                count = 1;
-                anim.SetTrigger("isStoneEffect");
-                activityText.gameObject.SetActive(false);
-
-                //Invoke("SetFalse()", 0.2f);
-
-                TilePosition01 = Tile01.transform.position - new Vector3(0, moveDistance01, 0);
-                StartCoroutine(MoveGreenTile(Tile01, TilePosition01));
-
-                TilePosition02 = Tile02.transform.position - new Vector3(0, moveDistance02, 0);
-                StartCoroutine(MoveGreenTile(Tile02, TilePosition02));
-
-                TilePosition03 = Tile03.transform.position - new Vector3(0, moveDistance03, 0);
-                StartCoroutine(MoveGreenTile(Tile03, TilePosition03));
-
-                TilePosition04 = Tile04.transform.position - new Vector3(0, moveDistance04, 0);
-                StartCoroutine(MoveGreenTile(Tile04, TilePosition04));
-            }
-            else if ( Input.GetKeyDown(KeyCode.E) && count == 1)
-            {
-                count = 0;
-                anim.SetTrigger("isStoneEffect");
-                activityText.gameObject.SetActive(false);
-
-                //Invoke("SetFalse()", 0.2f);
-
-                TilePosition01 = Tile01.transform.position - new Vector3(0, -moveDistance01, 0);
-                StartCoroutine(MoveGreenTile(Tile01, TilePosition01));
-
-                TilePosition02 = Tile02.transform.position - new Vector3(0, -moveDistance02, 0);
-                StartCoroutine(MoveGreenTile(Tile02, TilePosition02));
-
-                TilePosition03 = Tile03.transform.position - new Vector3(0, -moveDistance03, 0);
-                StartCoroutine(MoveGreenTile(Tile03, TilePosition03));
-
-                TilePosition04 = Tile04.transform.position - new Vector3(0, -moveDistance04, 0);
-                StartCoroutine(MoveGreenTile(Tile04, TilePosition04));
-            }
         }
 
 
