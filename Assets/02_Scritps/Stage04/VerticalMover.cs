@@ -8,7 +8,7 @@ public class VerticalMover : MonoBehaviour
     Vector3 pos; //현재위치
     Animator anim;
 
-    public float delta = 2.0f; // 좌(우)로 이동가능한 (x)최대값
+    public float delta ; // 상(하)로 이동가능한 (y)최대값
 
     float speed = 1.5f; // 이동속도
 

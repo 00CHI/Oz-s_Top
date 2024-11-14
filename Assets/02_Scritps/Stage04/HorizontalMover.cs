@@ -7,7 +7,7 @@ public class HorizontalMover : MonoBehaviour
 {
     Vector3 pos; //현재위치
 
-    float delta = 2.0f; // 좌(우)로 이동가능한 (x)최대값
+    public float delta; // 좌(우)로 이동가능한 (x)최대값
 
     float speed = 1.5f; // 이동속도
 
