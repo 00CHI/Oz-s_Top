@@ -13,6 +13,7 @@ TagManager:
   - Scissor01
   - Scissor02
   - Scissor03
+  - Scissor04
   layers:
   - Default
   - TransparentFX

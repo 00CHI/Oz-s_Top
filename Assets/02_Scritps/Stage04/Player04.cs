@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player04 : MonoBehaviour
 {
+    //Scripts
+
+
     //Player move
     public float speed;
     public float jumpDown;
@@ -15,6 +19,40 @@ public class Player04 : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
+    //_Scissor text control
+    public TextMeshProUGUI prompText;
+    public TextMeshProUGUI textItemName;
+    public TextMeshProUGUI textItemDesc;
+
+    //Scissor Control
+
+    public bool tagScissor01 = false;
+    public bool tagScissor02 = false;
+    public bool tagScissor03 = false;
+    public bool tagScissor04 = false;
+
+    public bool getScissor01 = false;
+    public bool getScissor02 = false;
+    public bool getScissor03 = false;
+    public bool getScissor04 = false;
+
+
+    public GameObject scissor01;
+    public GameObject scissor02;
+    public GameObject scissor03;
+    public GameObject scissor04;
+
+    public GameObject Image_scissor01;
+    public GameObject Image_scissor02;
+    public GameObject Image_scissor03;
+    public GameObject Image_scissor04;
+    public GameObject Image_MagicScissor;
+
+    public GameObject inventoryPanel;
+    public GameObject mergeButton;
+
+
+
     //Variable
     private float h = 0;
     private float j = 0;
@@ -25,6 +63,20 @@ public class Player04 : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        //inventoryPanel.gameObject.SetActive(false);
+        //mergeButton.gameObject.SetActive(false);
+
+        //_scissor
+        //Image_scissor01.gameObject.SetActive(false);
+        //Image_scissor02.gameObject.SetActive(false);
+        //Image_scissor03.gameObject.SetActive(false);
+        //Image_scissor04.gameObject.SetActive(false);
+        //Image_MagicScissor.gameObject.SetActive(false);
+
+        //textItemName.gameObject.SetActive(false);
+        //textItemDesc.gameObject.SetActive(false);
+        prompText.gameObject.SetActive(false);
     }
 
     void Start()
@@ -96,6 +148,45 @@ public class Player04 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        //Inventory
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        //Scissors
+        if(Input.GetKeyDown(KeyCode.E) && tagScissor01 == true)
+        {
+            getScissor01 = true;
+            scissor01.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && tagScissor02 == true)
+        {
+            getScissor02 = true;
+            scissor02.gameObject.SetActive(false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.E) && tagScissor03 == true)
+        {
+            getScissor03 = true;
+            scissor03.gameObject.SetActive(false);
+
+        }
+        if (Input.GetKeyDown(KeyCode.E) && tagScissor04 == true)
+        {
+            getScissor04 = true;
+            scissor04.gameObject.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -139,6 +230,7 @@ public class Player04 : MonoBehaviour
                 anim.SetBool("isIdle", true);
             }
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -150,7 +242,42 @@ public class Player04 : MonoBehaviour
             anim.SetBool("isPull", false);
             anim.SetBool("isRun", true);
             anim.SetBool("isIdle", true);
-
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Scissor01"))
+        {
+            tagScissor01 = true;
+            SetPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor02"))
+        {
+            tagScissor02 = true;
+            SetPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor03"))
+        {
+            tagScissor03 = true;
+            SetPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor04"))
+        {
+            tagScissor04 = true;
+            SetPrompText();
+        }
+    }
+
+    private void SetPrompText()
+    {
+        prompText.gameObject.SetActive(true);
+        prompText.text = "[ E ]∏¶ ¥≠∑Ø æ∆¿Ã≈€ »πµÊ";
+    }
+    private void OutPrompText()
+    {
+        prompText.gameObject.SetActive(false);
+    }
+
+
 }
