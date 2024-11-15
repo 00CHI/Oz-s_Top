@@ -49,7 +49,7 @@ public class RedRunestone02 : MonoBehaviour
     //eTYPE Type = eTYPE.NONE_TILE;
 
     //public eTYPE TYPE;
-      //public TYPE TYPE;
+    //public TYPE TYPE;
 
 
 
@@ -174,6 +174,8 @@ public class RedRunestone02 : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
+            isPlayer = false;
+
             activityText.gameObject.SetActive(false);
         }
     }

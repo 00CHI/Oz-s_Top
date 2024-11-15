@@ -26,7 +26,7 @@ public class HorizontalMover : MonoBehaviour
         Vector3 v = pos;
 
         //Mathf.Sin == delta 값에 다다르면 값 반전 처리 () 계속해서 앞에다 값을 넣어줌.
-        v.x += delta * Mathf.Sin(Time.time * speed);S
+        v.x += delta * Mathf.Sin(Time.time * speed);
         // 좌우 이동의 최대치 및 반전 처리
 
         transform.position = v;

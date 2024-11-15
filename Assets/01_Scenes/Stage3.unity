@@ -275,22 +275,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 17216853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ac474c5c2d07043a036c28366f18ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 49dc03588487f4749858517473f67468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activityText: {fileID: 1731180210}
-  Tile01: {fileID: 1191397461}
-  Tile02: {fileID: 491443512}
-  Tile03: {fileID: 1990596193}
-  Tile04: {fileID: 895492646}
-  moveDistance01: 1.5
-  moveDistance02: -6
-  moveDistance03: 1.5
-  moveDistance04: 1.5
-  moveSpeed: 2
-  limitMove: 0
+  RUENSTONE_TYPE: 0
+  count: 0
   isPlayer: 0
   isKeyE: 0
+  activityText: {fileID: 1731180210}
 --- !u!1 &83745107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491443513}
   - component: {fileID: 491443515}
+  - component: {fileID: 491443516}
   - component: {fileID: 491443514}
   m_Layer: 0
   m_Name: Red_Tile02
@@ -1812,6 +1805,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &491443516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491443512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TILE_TYPE: 0
+  MOVE_TYPE: 0
+  distance: 0
+  moveSpeed: 0
 --- !u!1 &641889650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 895492647}
   - component: {fileID: 895492649}
+  - component: {fileID: 895492650}
   - component: {fileID: 895492648}
   m_Layer: 0
   m_Name: Red_Tile04
@@ -2511,6 +2521,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &895492650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895492646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TILE_TYPE: 0
+  MOVE_TYPE: 0
+  distance: 0
+  moveSpeed: 0
 --- !u!1 &926956262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3123,7 +3149,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1191397463}
   - component: {fileID: 1191397462}
+  - component: {fileID: 1191397466}
   - component: {fileID: 1191397464}
+  - component: {fileID: 1191397465}
   m_Layer: 0
   m_Name: Red_Tile01
   m_TagString: Untagged
@@ -3243,6 +3271,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3, y: 0.4}
   m_EdgeRadius: 0
+--- !u!114 &1191397465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191397461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TILE_TYPE: 0
+  MOVE_TYPE: 0
+  distance: 0
+  moveSpeed: 0
+--- !u!114 &1191397466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191397461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TILE_TYPE: 0
+  MOVE_TYPE: 0
+  distance: 0
+  moveSpeed: 0
 --- !u!1 &1249028043
 GameObject:
   m_ObjectHideFlags: 0
@@ -7512,6 +7572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1990596194}
   - component: {fileID: 1990596196}
+  - component: {fileID: 1990596197}
   - component: {fileID: 1990596195}
   m_Layer: 0
   m_Name: Red_Tile03
@@ -7632,6 +7693,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1990596197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990596193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TILE_TYPE: 0
+  MOVE_TYPE: 0
+  distance: 0
+  moveSpeed: 0
 --- !u!1 &2045891729
 GameObject:
   m_ObjectHideFlags: 0

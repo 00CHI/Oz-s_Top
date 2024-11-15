@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Disapear_Platform : MonoBehaviour
 {
-    bool isPlayer = false;
+    //bool isPlayer = false;
     public GameObject platform;
     private SpriteRenderer spriteRenderer;
 
-    private bool isFadingOut = false;
-    private bool isFadingIn = false;
 
 
     public float fadeDuration = 1f;
@@ -66,7 +64,7 @@ public class Disapear_Platform : MonoBehaviour
 
     IEnumerator FadeOut()
     {
-        isFadingOut = true;
+        //isFadingOut = true;
         float startAlpha = spriteRenderer.color.a;
 
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
