@@ -83,7 +83,7 @@ public class RedRunestone02 : MonoBehaviour
 
         if (isPlayer == true)
         {
-            if (Input.GetKeyDown(KeyCode.R) && count == 0)
+            if (Input.GetKeyDown(KeyCode.E) && count == 0)
             {
                 anim.SetTrigger("isStoneEffect");
                 activityText.gameObject.SetActive(false);
@@ -106,7 +106,7 @@ public class RedRunestone02 : MonoBehaviour
 
                 count = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.R) && count == 1)
+            else if (Input.GetKeyDown(KeyCode.E) && count == 1)
             {
                 anim.SetTrigger("isStoneEffect");
                 activityText.gameObject.SetActive(false);
