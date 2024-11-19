@@ -14,6 +14,7 @@ TagManager:
   - Scissor02
   - Scissor03
   - Scissor04
+  - MagicTree
   layers:
   - Default
   - TransparentFX

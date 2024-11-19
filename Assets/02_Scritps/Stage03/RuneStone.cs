@@ -10,6 +10,13 @@ public enum RUENSTONE_TYPE
     BLUE,
     PURPLE,
     BLACK,
+
+    NONE
+}
+public enum LEFT_RIGHT
+{
+    LEFT,
+    RIGHT,
     NONE
 }
 
@@ -25,12 +32,16 @@ public class RuneStone : MonoBehaviour
 
     public TextMeshProUGUI activityText;
 
+    public RUENSTONE_TYPE ContinueRuen;
+    public bool MoveLeft;
 
     // Start is called before the first frame update
     void Awake()
     {
         isPlayer = false;
-        isKeyE = false;
+
+        ContinueRuen = RUENSTONE_TYPE.NONE;
+        MoveLeft = false;
     }
 
     // Update is called once per frame
@@ -38,13 +49,11 @@ public class RuneStone : MonoBehaviour
     {
         if(isPlayer == true)
         {
-            if(Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
-                isKeyE = true;
-            }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                isKeyE = false;
+                ContinueRuen = RUENSTONE_TYPE;
+               
+                MoveLeft = !MoveLeft;
             }
         }
     }

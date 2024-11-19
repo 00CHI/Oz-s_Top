@@ -14,6 +14,8 @@ public class Player04 : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
 
+    int inventoryCount = 0;
+
     //Sprite_Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -21,8 +23,8 @@ public class Player04 : MonoBehaviour
 
     //_Scissor text control
     public TextMeshProUGUI prompText;
-    public TextMeshProUGUI textItemName;
-    public TextMeshProUGUI textItemDesc;
+    //public TextMeshProUGUI textItemName;
+    //public TextMeshProUGUI textItemDesc;
 
     //Scissor Control
 
@@ -35,6 +37,7 @@ public class Player04 : MonoBehaviour
     public bool getScissor02 = false;
     public bool getScissor03 = false;
     public bool getScissor04 = false;
+    public bool getMagicScissor = false;
 
 
     public GameObject scissor01;
@@ -50,6 +53,8 @@ public class Player04 : MonoBehaviour
 
     public GameObject inventoryPanel;
     public GameObject mergeButton;
+
+    public GameObject magicTree;
 
 
 
@@ -68,10 +73,10 @@ public class Player04 : MonoBehaviour
         //mergeButton.gameObject.SetActive(false);
 
         //_scissor
-        //Image_scissor01.gameObject.SetActive(false);
-        //Image_scissor02.gameObject.SetActive(false);
-        //Image_scissor03.gameObject.SetActive(false);
-        //Image_scissor04.gameObject.SetActive(false);
+        Image_scissor01.gameObject.SetActive(false);
+        Image_scissor02.gameObject.SetActive(false);
+        Image_scissor03.gameObject.SetActive(false);
+        Image_scissor04.gameObject.SetActive(false);
         //Image_MagicScissor.gameObject.SetActive(false);
 
         //textItemName.gameObject.SetActive(false);
@@ -119,7 +124,20 @@ public class Player04 : MonoBehaviour
         }
 
         //Jump Down
-        if (rigid.velocity.y < -0.01f)
+        if (rigid.velocity.y < - 0.01f)
+        {
+            //false anim
+            anim.SetBool("isJump", false);
+            anim.SetBool("isRun", false);
+            anim.SetBool("isIdle", false);
+
+            // true anim
+            anim.SetBool("isJumpdown", true);
+
+            //Gravity Ctrl
+            rigid.AddForce(Vector2.down * jumpDown * Time.deltaTime);
+        }
+        else if (rigid.velocity.y < -0.01f && rigid.velocity.x < -0.01f)
         {
             //false anim
             anim.SetBool("isJump", false);
@@ -154,7 +172,7 @@ public class Player04 : MonoBehaviour
         {
             inventoryPanel.gameObject.SetActive(true);
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.None;     
 
         }
         else if (Input.GetKeyUp(KeyCode.Tab))
@@ -165,27 +183,59 @@ public class Player04 : MonoBehaviour
         }
 
         //Scissors
-        if(Input.GetKeyDown(KeyCode.E) && tagScissor01 == true)
+        if (Input.GetKeyDown(KeyCode.E) && tagScissor01 == true)
         {
             getScissor01 = true;
             scissor01.gameObject.SetActive(false);
+            Image_scissor01.gameObject.SetActive(true);
+
         }
         if (Input.GetKeyDown(KeyCode.E) && tagScissor02 == true)
         {
             getScissor02 = true;
             scissor02.gameObject.SetActive(false);
+            Image_scissor02.gameObject.SetActive(true);
 
         }
         if (Input.GetKeyDown(KeyCode.E) && tagScissor03 == true)
         {
             getScissor03 = true;
             scissor03.gameObject.SetActive(false);
+            Image_scissor03.gameObject.SetActive(true);
+
 
         }
         if (Input.GetKeyDown(KeyCode.E) && tagScissor04 == true)
         {
             getScissor04 = true;
             scissor04.gameObject.SetActive(false);
+            Image_scissor04.gameObject.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && tagScissor04 == true)
+        {
+            getScissor04 = true;
+            scissor04.gameObject.SetActive(false);
+            Image_scissor04.gameObject.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && getMagicScissor == true)
+        {
+
+        }
+
+        //Inventory
+        if (Input.GetKeyDown(KeyCode.Tab) && inventoryCount == 0)
+        {
+            inventoryPanel.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            inventoryCount = 1;
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
@@ -266,6 +316,29 @@ public class Player04 : MonoBehaviour
         {
             tagScissor04 = true;
             SetPrompText();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Scissor01"))
+        {
+            tagScissor01 = false;
+            OutPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor02"))
+        {
+            tagScissor02 = false;
+            OutPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor03"))
+        {
+            tagScissor03 = false;
+            OutPrompText();
+        }
+        if (collision.gameObject.CompareTag("Scissor04"))
+        {
+            tagScissor04 = false;
+            OutPrompText();
         }
     }
 
