@@ -1819,8 +1819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TILE_TYPE: 0
   MOVE_TYPE: 0
-  distance: 0
-  moveSpeed: 0
+  distance: 1.5
+  moveSpeed: 1
 --- !u!1 &641889650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,8 +2535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TILE_TYPE: 0
   MOVE_TYPE: 0
-  distance: 0
-  moveSpeed: 0
+  distance: 1.5
+  moveSpeed: 1
 --- !u!1 &926956262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,8 +3301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TILE_TYPE: 0
   MOVE_TYPE: 0
-  distance: 0
-  moveSpeed: 0
+  distance: 1.5
+  moveSpeed: 1
 --- !u!1 &1249028043
 GameObject:
   m_ObjectHideFlags: 0
@@ -7707,8 +7707,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TILE_TYPE: 0
   MOVE_TYPE: 0
-  distance: 0
-  moveSpeed: 0
+  distance: 1.5
+  moveSpeed: 1
 --- !u!1 &2045891729
 GameObject:
   m_ObjectHideFlags: 0

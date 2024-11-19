@@ -16,7 +16,6 @@ public enum MOVE_TYPE
 {
     HORIZONTAL,
     VERTICAL
-
 }
 
 public class Tile : MonoBehaviour
@@ -86,7 +85,6 @@ public class Tile : MonoBehaviour
                             TilePosition = transform.position - new Vector3(0, -distance, 0);
                             transform.position = Vector3.MoveTowards(transform.position, TilePosition, moveSpeed * Time.deltaTime);
                         }
-
                     }
                     break;
             }
