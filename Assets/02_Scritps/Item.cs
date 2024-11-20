@@ -15,9 +15,10 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void Awake()
     {
-        icon = GetComponentsInChildren<Image>()[1];
-        icon.sprite = data.itemIcon; 
-        
+        //icon = GetComponentsInChildren<Image>()[1];
+        icon.sprite = data.itemIcon;
+        textItemName.text = data.displayName;
+        textItemDesc.text = data.description;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -25,8 +26,8 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         textItemName.gameObject.SetActive(true);
         textItemDesc.gameObject.SetActive(true);
 
-        textItemName.text = data.displayName;
-        textItemDesc.text = data.description;
+        //textItemName.text = data.displayName;
+        //textItemDesc.text = data.description;
     }
     public void OnPointerExit(PointerEventData eventData)
     {

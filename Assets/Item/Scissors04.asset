@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb04e808fa38b04485db967ef31f571, type: 3}
-  m_Name: Scissors02
+  m_Name: Scissors04
   m_EditorClassIdentifier: 
-  displayName: "\uB450\uBC88\uC9F8 \uAC00\uC704 \uC870\uAC01"
+  displayName: "\uC138\uBC88\uC9F8 \uAC00\uC704 \uC870\uAC01"
   description: "\uC0B0\uC0B0\uC870\uAC01\uB09C \uAC00\uC704 \uBD80\uD488\uC774\uB2E4.
     \uC5B4\uB518\uAC00\uC5D0 \uC0AC\uC6A9\uD560 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
-  itemIcon: {fileID: 21300000, guid: c679b7b5a39c26748a644b8abd74c5ab, type: 3}
-  dropPrefab: {fileID: 4533017801517900476, guid: 3000a8f6906fdcd4dafe095e068f6067, type: 3}
+  itemIcon: {fileID: 21300000, guid: 5c545f3612eea62448224f416ddb1fa4, type: 3}
+  dropPrefab: {fileID: 6152413202424448602, guid: 59840541489b4f04cb722de2464d11ff, type: 3}
   canStack: 0
   maxStackAmount: 0
