@@ -28,7 +28,7 @@ public class RuneStone : MonoBehaviour
     public int count = 0;
 
     public bool isPlayer;
-    public bool isKeyE;
+    //public bool isKeyE;
 
     public TextMeshProUGUI activityText;
 
@@ -49,7 +49,7 @@ public class RuneStone : MonoBehaviour
     {
         if(isPlayer == true)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 ContinueRuen = RUENSTONE_TYPE;
                
