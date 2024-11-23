@@ -5,10 +5,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Item : MonoBehaviour,IPointerEnterHandler, IPointerExitHandler
 {
     public ItemData data;
-    Image icon;
+    public Image icon;
     public TextMeshProUGUI textItemName;
     public TextMeshProUGUI textItemDesc;
 
@@ -17,8 +17,10 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         //icon = GetComponentsInChildren<Image>()[1];
         icon.sprite = data.itemIcon;
-        textItemName.text = data.displayName;
-        textItemDesc.text = data.description;
+
+
+        textItemName.gameObject.SetActive(false);
+        textItemDesc.gameObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -26,8 +28,8 @@ public class Item : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         textItemName.gameObject.SetActive(true);
         textItemDesc.gameObject.SetActive(true);
 
-        //textItemName.text = data.displayName;
-        //textItemDesc.text = data.description;
+        textItemName.text = data.displayName;
+        textItemDesc.text = data.description;
     }
     public void OnPointerExit(PointerEventData eventData)
     {

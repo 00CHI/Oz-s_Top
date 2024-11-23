@@ -70,14 +70,14 @@ public class Player04 : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         //inventoryPanel.gameObject.SetActive(false);
-        //mergeButton.gameObject.SetActive(false);
+        mergeButton.gameObject.SetActive(false);
 
         //_scissor
         Image_scissor01.gameObject.SetActive(false);
         Image_scissor02.gameObject.SetActive(false);
         Image_scissor03.gameObject.SetActive(false);
         Image_scissor04.gameObject.SetActive(false);
-        //Image_MagicScissor.gameObject.SetActive(false);
+        Image_MagicScissor.gameObject.SetActive(false);
 
         //textItemName.gameObject.SetActive(false);
         //textItemDesc.gameObject.SetActive(false);
@@ -217,7 +217,13 @@ public class Player04 : MonoBehaviour
             scissor04.gameObject.SetActive(false);
             Image_scissor04.gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.E) && getMagicScissor == true)
+        if (getScissor01 == true && getScissor02 == true && getScissor03 == true && getScissor04 == true)
+        {
+            getMagicScissor = true;
+            mergeButton.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && getMagicScissor == true )
         {
 
         }
@@ -350,6 +356,16 @@ public class Player04 : MonoBehaviour
     private void OutPrompText()
     {
         prompText.gameObject.SetActive(false);
+    }
+
+    public void OnMergeButton()
+    {
+        Image_scissor01.gameObject.SetActive(false);
+        Image_scissor02.gameObject.SetActive(false);
+        Image_scissor03.gameObject.SetActive(false);
+        Image_scissor04.gameObject.SetActive(false);
+        Image_MagicScissor.gameObject.SetActive(true);
+        getMagicScissor = true;
     }
 
 

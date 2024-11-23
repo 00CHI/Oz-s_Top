@@ -28,8 +28,8 @@ public class ItemData : ScriptableObject
     public Sprite itemIcon;
     public GameObject dropPrefab;
 
-    [Header("Stacking")]
-    public bool canStack;
-    public int maxStackAmount;
+    //[Header("Stacking")]
+    //public bool canStack;
+    //public int maxStackAmount;
 }
 
