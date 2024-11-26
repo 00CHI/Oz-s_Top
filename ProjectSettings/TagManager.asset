@@ -16,6 +16,7 @@ TagManager:
   - Scissor04
   - MagicTree
   - Portal01
+  - Portal02
   layers:
   - Default
   - TransparentFX
