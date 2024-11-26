@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e0439cef94ac4948ac8b6959c52b436
+guid: 12f512e6f4c623943a0c2278d574b29a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Witch01_idle_0
+      name: portal1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7b4a6568146a7e4a8c3d22522248a0f
-      internalID: -839220002
+      spriteID: 36280251482d8224ebe0e3de3e65d9cf
+      internalID: -437334234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_1
+      name: portal1_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 89
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f8d22afd022a204db00f90d8c6fd6a9
-      internalID: 438375722
+      spriteID: ecde072bac013d14da9ec4aab0033b77
+      internalID: -1999287002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_2
+      name: portal1_2
       rect:
         serializedVersion: 2
-        x: 224
+        x: 178
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcba060cfd96679459031df4913b50b4
-      internalID: -976817156
+      spriteID: 04090456d9c2d1a4787fd6800a011176
+      internalID: -462686586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_3
+      name: portal1_3
       rect:
         serializedVersion: 2
-        x: 336
+        x: 267
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a86195398d7bb244fa68b2bf744cd204
-      internalID: 726834270
+      spriteID: 80d2dd1bd49349e40ac81355a48bf4d3
+      internalID: -1874679801
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_4
+      name: portal1_4
       rect:
         serializedVersion: 2
-        x: 448
+        x: 356
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd50cac882a56ef4094d916fd9179cdf
-      internalID: -1526936119
+      spriteID: 95adf707ab3a1ad40a422fbb9f3345f7
+      internalID: 1502897422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_5
+      name: portal1_5
       rect:
         serializedVersion: 2
-        x: 560
+        x: 445
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 184be55041b6d034c89b3f37df574eb2
-      internalID: -383435576
+      spriteID: af11aab07e0b17e4397eeee01099f2f8
+      internalID: 1230885723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_6
+      name: portal1_6
       rect:
         serializedVersion: 2
-        x: 672
+        x: 534
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5072811dcaba50d45b19aee1e79c7e64
-      internalID: -1579397134
+      spriteID: a9ee54639237ea84597accbd2b07ec33
+      internalID: 411148816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch01_idle_7
+      name: portal1_7
       rect:
         serializedVersion: 2
-        x: 784
+        x: 623
         y: 0
-        width: 112
-        height: 153
+        width: 89
+        height: 126
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,92 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d4d19c9fa776e46a1815cfed2f1673
-      internalID: -2026294825
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch01_idle_8
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 112
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bd0068ce332859479bab40ebffb3c05
-      internalID: 1369534911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch01_idle_9
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 0
-        width: 112
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f8f562baf64238d47be8898fa0e9e9aa
-      internalID: -1402401019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch01_idle_10
-      rect:
-        serializedVersion: 2
-        x: 1120
-        y: 0
-        width: 112
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a13c0b28578bff94ea1f88f2cea168e9
-      internalID: 1216107197
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Witch01_idle_11
-      rect:
-        serializedVersion: 2
-        x: 1232
-        y: 0
-        width: 112
-        height: 153
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 060ebfffb37604b448b3b3fab550c8f2
-      internalID: 998728580
+      spriteID: 88839e81c0de12149a7cbcb83f9ef26a
+      internalID: -1636387734
       vertices: []
       indices: 
       edges: []
@@ -359,18 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Witch01_idle_0: -839220002
-      Witch01_idle_1: 438375722
-      Witch01_idle_10: 1216107197
-      Witch01_idle_11: 998728580
-      Witch01_idle_2: -976817156
-      Witch01_idle_3: 726834270
-      Witch01_idle_4: -1526936119
-      Witch01_idle_5: -383435576
-      Witch01_idle_6: -1579397134
-      Witch01_idle_7: -2026294825
-      Witch01_idle_8: 1369534911
-      Witch01_idle_9: -1402401019
+      portal1_0: -437334234
+      portal1_1: -1999287002
+      portal1_2: -462686586
+      portal1_3: -1874679801
+      portal1_4: 1502897422
+      portal1_5: 1230885723
+      portal1_6: 411148816
+      portal1_7: -1636387734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

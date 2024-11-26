@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a04c483333ec18c4eb2f63a3c9aa39d8
+guid: ce68ac37abf82504e9a317f39a2f7f1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Witch_idle2_0
+      name: witch_standing_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bc92d932424025498b5c46fd770332b
-      internalID: 252874895
+      spriteID: 843386cd18348e946b624886208cfd6a
+      internalID: 1163603013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_1
+      name: witch_standing_1
       rect:
         serializedVersion: 2
         x: 162
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dedf1974bf0fb104b878c60d31fb5af7
-      internalID: -496625442
+      spriteID: 5a26f83fe6fb2884da521e2a0712a190
+      internalID: 636125670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_2
+      name: witch_standing_2
       rect:
         serializedVersion: 2
         x: 324
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eed005cd05a2344fb9c89dddd805fd4
-      internalID: 1893396847
+      spriteID: 072c704a7455aa144a1b26faa4c972af
+      internalID: -724280535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_3
+      name: witch_standing_3
       rect:
         serializedVersion: 2
         x: 486
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42d8bb1e8f026ec4f8bf52605460f156
-      internalID: 1614515922
+      spriteID: 4c0fca6f18e25f140bc31531153ca11d
+      internalID: -1517264356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_4
+      name: witch_standing_4
       rect:
         serializedVersion: 2
         x: 648
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6dcd7a26f62abc14ca4afc46278a93e9
-      internalID: -1673361
+      spriteID: e876d5d3983959646be0e1146621ce24
+      internalID: 1328867879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_5
+      name: witch_standing_5
       rect:
         serializedVersion: 2
         x: 810
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07fbc19944cf7324c8bca9e576ac9684
-      internalID: 1148582575
+      spriteID: 8ae1509fb027a4f48a53dfd20e0153e4
+      internalID: 420031267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_6
+      name: witch_standing_6
       rect:
         serializedVersion: 2
         x: 972
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8092e9ea4344a2342bb258cced730dce
-      internalID: -425470632
+      spriteID: f26311ec55ddc1742972c9571a6be541
+      internalID: 1071490589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_7
+      name: witch_standing_7
       rect:
         serializedVersion: 2
         x: 1134
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a29b3d3577a908b4f88ba9e0f04212ca
-      internalID: 1945467081
+      spriteID: 0173f1e80d99d6947b730e6edb4d2591
+      internalID: -1737389962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_8
+      name: witch_standing_8
       rect:
         serializedVersion: 2
         x: 1296
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3c281afa5bcd984aaef555e777b2943
-      internalID: -974399074
+      spriteID: 773cfb73e2255c74d932c3a84dce1f5a
+      internalID: 1862919064
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_9
+      name: witch_standing_9
       rect:
         serializedVersion: 2
         x: 1458
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7385f34ce0d9a4496049d1b7507ae6
-      internalID: 1884636257
+      spriteID: 94ea821e15b2cf74090ff7134ec3da10
+      internalID: 1844788048
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_10
+      name: witch_standing_10
       rect:
         serializedVersion: 2
         x: 1620
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3755b776cf9965e419d5cec6c7029076
-      internalID: 1784763610
+      spriteID: 9a2ef1f260a3ec64aa91b9a93f29064e
+      internalID: -28023222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_11
+      name: witch_standing_11
       rect:
         serializedVersion: 2
         x: 1782
@@ -342,14 +342,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e499f013c89d4614aa96fee3e0dd73ae
-      internalID: 163159734
+      spriteID: 926dbcd26e1efab4ba7a5d88072bab42
+      internalID: -1241335364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_12
+      name: witch_standing_12
       rect:
         serializedVersion: 2
         x: 1944
@@ -363,14 +363,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36fd514638f0d5c4abd585762723986a
-      internalID: 1905221188
+      spriteID: c9d1975dc29850e4eb525b148093aa5b
+      internalID: -746721938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_13
+      name: witch_standing_13
       rect:
         serializedVersion: 2
         x: 2106
@@ -384,14 +384,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c18a18e35ba7e24ab67511a3b1bde2e
-      internalID: 242479508
+      spriteID: 94048cf8cbfd9c14e9c92d27e2a22c4f
+      internalID: -1020542911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_14
+      name: witch_standing_14
       rect:
         serializedVersion: 2
         x: 2268
@@ -405,14 +405,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c1ea2822562d84499a20bccee4056c
-      internalID: -1667230988
+      spriteID: 5b469c1d981ff1f4b9f043b7bbb1284c
+      internalID: 1109883996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_15
+      name: witch_standing_15
       rect:
         serializedVersion: 2
         x: 2430
@@ -426,14 +426,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d208f728a37cd0c4c96ab738fe89893e
-      internalID: 1234206880
+      spriteID: d0524e1bebc0a054082d791af71942f0
+      internalID: 1417007952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_16
+      name: witch_standing_16
       rect:
         serializedVersion: 2
         x: 2592
@@ -447,14 +447,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 767a489fd7c637d47ba8839a6dee107c
-      internalID: -1692437709
+      spriteID: f68e31e5c34c53e47903397d3118f0cf
+      internalID: 1526078887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_17
+      name: witch_standing_17
       rect:
         serializedVersion: 2
         x: 2754
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f126d01bb1ceba46ab8f7bacd5ca86b
-      internalID: -1325420889
+      spriteID: a5cbd1ceac0a2b84faaab28ef8c3b553
+      internalID: -929280284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_18
+      name: witch_standing_18
       rect:
         serializedVersion: 2
         x: 2916
@@ -489,14 +489,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6a631e427795147910636eb28f5619
-      internalID: -98473265
+      spriteID: 7dc84017004e108458fde32d461a0ddc
+      internalID: -1387192314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_19
+      name: witch_standing_19
       rect:
         serializedVersion: 2
         x: 3078
@@ -510,14 +510,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ed9bd13727cb5d43bab1bf85850838e
-      internalID: -848618869
+      spriteID: 75bc60feedbcc1d40a9a550119583553
+      internalID: -813819828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_20
+      name: witch_standing_20
       rect:
         serializedVersion: 2
         x: 3240
@@ -531,14 +531,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 012d5075a46c6574a8738ec478f8472d
-      internalID: 216045311
+      spriteID: 2e464b213bf75394a89b40707cff3ee4
+      internalID: 92871028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_21
+      name: witch_standing_21
       rect:
         serializedVersion: 2
         x: 3402
@@ -552,14 +552,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d7582ebe3d77347a9183ffccb15b1f
-      internalID: -1264871274
+      spriteID: 48f3e6aa48195284187b2e24fd68aebf
+      internalID: 1453090402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_22
+      name: witch_standing_22
       rect:
         serializedVersion: 2
         x: 3564
@@ -573,14 +573,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5149e0e4e2c9aab4b8d0df03322eff74
-      internalID: -1469930373
+      spriteID: 01e0fd21aba000e4dbb1fe073ccc1622
+      internalID: 857099280
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_23
+      name: witch_standing_23
       rect:
         serializedVersion: 2
         x: 3726
@@ -594,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24f90e8c3b373ce4e934c6a3aeaf8344
-      internalID: 130791461
+      spriteID: 47215fa51b137bc4591d516d0351c177
+      internalID: -1666880956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_24
+      name: witch_standing_24
       rect:
         serializedVersion: 2
         x: 3888
@@ -615,14 +615,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2292056171053c1489d5c133e4674c72
-      internalID: -1007315373
+      spriteID: 50b943b9db7540f4f8bc6717fc108159
+      internalID: 662842792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Witch_idle2_25
+      name: witch_standing_25
       rect:
         serializedVersion: 2
         x: 4050
@@ -636,8 +636,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0cb5b4e399a743144a588f66611591fd
-      internalID: -82212933
+      spriteID: e0c181d4f1ec5a84fb15e03cd89246af
+      internalID: -1764829649
       vertices: []
       indices: 
       edges: []
@@ -653,32 +653,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Witch_idle2_0: 252874895
-      Witch_idle2_1: -496625442
-      Witch_idle2_10: 1784763610
-      Witch_idle2_11: 163159734
-      Witch_idle2_12: 1905221188
-      Witch_idle2_13: 242479508
-      Witch_idle2_14: -1667230988
-      Witch_idle2_15: 1234206880
-      Witch_idle2_16: -1692437709
-      Witch_idle2_17: -1325420889
-      Witch_idle2_18: -98473265
-      Witch_idle2_19: -848618869
-      Witch_idle2_2: 1893396847
-      Witch_idle2_20: 216045311
-      Witch_idle2_21: -1264871274
-      Witch_idle2_22: -1469930373
-      Witch_idle2_23: 130791461
-      Witch_idle2_24: -1007315373
-      Witch_idle2_25: -82212933
-      Witch_idle2_3: 1614515922
-      Witch_idle2_4: -1673361
-      Witch_idle2_5: 1148582575
-      Witch_idle2_6: -425470632
-      Witch_idle2_7: 1945467081
-      Witch_idle2_8: -974399074
-      Witch_idle2_9: 1884636257
+      witch_standing_0: 1163603013
+      witch_standing_1: 636125670
+      witch_standing_10: -28023222
+      witch_standing_11: -1241335364
+      witch_standing_12: -746721938
+      witch_standing_13: -1020542911
+      witch_standing_14: 1109883996
+      witch_standing_15: 1417007952
+      witch_standing_16: 1526078887
+      witch_standing_17: -929280284
+      witch_standing_18: -1387192314
+      witch_standing_19: -813819828
+      witch_standing_2: -724280535
+      witch_standing_20: 92871028
+      witch_standing_21: 1453090402
+      witch_standing_22: 857099280
+      witch_standing_23: -1666880956
+      witch_standing_24: 662842792
+      witch_standing_25: -1764829649
+      witch_standing_3: -1517264356
+      witch_standing_4: 1328867879
+      witch_standing_5: 420031267
+      witch_standing_6: 1071490589
+      witch_standing_7: -1737389962
+      witch_standing_8: 1862919064
+      witch_standing_9: 1844788048
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
