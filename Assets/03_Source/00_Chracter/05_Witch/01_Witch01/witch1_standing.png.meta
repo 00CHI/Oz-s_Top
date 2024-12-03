@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -102,8 +102,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9eb14df7e7f12f042998d8f04cca275d
-      internalID: -917168547
+      spriteID: 7b280e7b7897fcb42875064427b15193
+      internalID: -1971567436
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: witch1_standing_1
       rect:
         serializedVersion: 2
-        x: 113
+        x: 108
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c99ddcd57b9c04a46b08cfa099e8e6a2
-      internalID: 1908197516
+      spriteID: 6dbbf998eb733f74a96bf441cc30d1d2
+      internalID: -1116905474
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: witch1_standing_2
       rect:
         serializedVersion: 2
-        x: 226
+        x: 216
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5423ad393a0494d409eb0cfec0cbe256
-      internalID: -1308013138
+      spriteID: ffb34a6ab69faf84f93fea5a61baac5c
+      internalID: 1529343725
       vertices: []
       indices: 
       edges: []
@@ -163,10 +163,10 @@ TextureImporter:
       name: witch1_standing_3
       rect:
         serializedVersion: 2
-        x: 339
+        x: 324
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abb1b082a9c4ae1468cb2bb4f7b62b92
-      internalID: 862697865
+      spriteID: d3eca80446f8a624abb1a1891a9f417f
+      internalID: -1366616666
       vertices: []
       indices: 
       edges: []
@@ -184,10 +184,10 @@ TextureImporter:
       name: witch1_standing_4
       rect:
         serializedVersion: 2
-        x: 452
+        x: 432
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,8 +195,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21db11220ddee0c47b2acfbdc682a25b
-      internalID: 1631231853
+      spriteID: 74981ac8344df074d9392fb06894316b
+      internalID: 807070375
       vertices: []
       indices: 
       edges: []
@@ -205,10 +205,10 @@ TextureImporter:
       name: witch1_standing_5
       rect:
         serializedVersion: 2
-        x: 565
+        x: 540
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c95d2a3995d532f4f8f161e286ffee24
-      internalID: -651625650
+      spriteID: d426fd3d67ff9c747acaa35b263f768e
+      internalID: -2146325946
       vertices: []
       indices: 
       edges: []
@@ -226,10 +226,10 @@ TextureImporter:
       name: witch1_standing_6
       rect:
         serializedVersion: 2
-        x: 678
+        x: 648
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,8 +237,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9366ca960bf2e2148bad7cbef2ea71ef
-      internalID: -1189346182
+      spriteID: e344497b30517c14b9160f17ddb929ca
+      internalID: -267246225
       vertices: []
       indices: 
       edges: []
@@ -247,10 +247,10 @@ TextureImporter:
       name: witch1_standing_7
       rect:
         serializedVersion: 2
-        x: 791
+        x: 756
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,8 +258,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4e6e2d161cf6840a2e7fefc0ccd7dd
-      internalID: 311935781
+      spriteID: cc3c8b91d518ffe4da5514921a7aae30
+      internalID: 879812609
       vertices: []
       indices: 
       edges: []
@@ -268,10 +268,10 @@ TextureImporter:
       name: witch1_standing_8
       rect:
         serializedVersion: 2
-        x: 904
+        x: 864
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,8 +279,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10dcad330bc2a7f42bf2cbebd2fa250d
-      internalID: 20088450
+      spriteID: 998305efa2e898743892556ecfd63d96
+      internalID: -1765093412
       vertices: []
       indices: 
       edges: []
@@ -289,10 +289,10 @@ TextureImporter:
       name: witch1_standing_9
       rect:
         serializedVersion: 2
-        x: 1017
+        x: 972
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d264ba1ba318cb74db9bb56dff305db5
-      internalID: 278888605
+      spriteID: a0b0a1f770b0f9641887040ff6819a34
+      internalID: -869286737
       vertices: []
       indices: 
       edges: []
@@ -310,10 +310,10 @@ TextureImporter:
       name: witch1_standing_10
       rect:
         serializedVersion: 2
-        x: 1130
+        x: 1080
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,8 +321,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d0d01eca04a00438df26bae1c74563
-      internalID: -1754008463
+      spriteID: 2719fc22fecab64469b2e351eb87e434
+      internalID: -1259433803
       vertices: []
       indices: 
       edges: []
@@ -331,10 +331,10 @@ TextureImporter:
       name: witch1_standing_11
       rect:
         serializedVersion: 2
-        x: 1243
+        x: 1188
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -342,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: add36b989fa586945be4d8aef63f6f3b
-      internalID: -242237827
+      spriteID: 7f8afa39715532a449f4718721bc940d
+      internalID: 164501898
       vertices: []
       indices: 
       edges: []
@@ -352,10 +352,10 @@ TextureImporter:
       name: witch1_standing_12
       rect:
         serializedVersion: 2
-        x: 1356
+        x: 1296
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -363,8 +363,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc547af6d571c184693162034ef1c439
-      internalID: -152938258
+      spriteID: 52bfe1ea50a285a4da7526975d9e42ca
+      internalID: -83664592
       vertices: []
       indices: 
       edges: []
@@ -373,10 +373,10 @@ TextureImporter:
       name: witch1_standing_13
       rect:
         serializedVersion: 2
-        x: 1469
+        x: 1404
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,8 +384,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddaf9dc945fdb024c90a22fe90008997
-      internalID: 1450857112
+      spriteID: 55b022e3aa64f7447ac71ee38a8fc164
+      internalID: -1128598640
       vertices: []
       indices: 
       edges: []
@@ -394,10 +394,10 @@ TextureImporter:
       name: witch1_standing_14
       rect:
         serializedVersion: 2
-        x: 1582
+        x: 1512
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,8 +405,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc8c69bc872844a45b0826b84747f599
-      internalID: -1555354378
+      spriteID: a03c94fcef1206743a608e37c3779dc9
+      internalID: -1664955233
       vertices: []
       indices: 
       edges: []
@@ -415,10 +415,10 @@ TextureImporter:
       name: witch1_standing_15
       rect:
         serializedVersion: 2
-        x: 1695
+        x: 1620
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -426,8 +426,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc940b8f5ce12884bab642c15f1fc2ff
-      internalID: -322483360
+      spriteID: 02c630904db062c449c3b8015fb8bfd5
+      internalID: 109129029
       vertices: []
       indices: 
       edges: []
@@ -436,10 +436,10 @@ TextureImporter:
       name: witch1_standing_16
       rect:
         serializedVersion: 2
-        x: 1808
+        x: 1728
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -447,8 +447,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec7eee877ae16bb4bb6ccf92d0cbd38f
-      internalID: 1612495715
+      spriteID: c668525c3fece8d438745b0287fa7297
+      internalID: -831034056
       vertices: []
       indices: 
       edges: []
@@ -457,10 +457,10 @@ TextureImporter:
       name: witch1_standing_17
       rect:
         serializedVersion: 2
-        x: 1921
+        x: 1836
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,8 +468,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04153a0a1aa7d6b40acf5908dd16f36a
-      internalID: 1264001204
+      spriteID: 2c8154d2f5cd7a540b6a4b688a672b46
+      internalID: -1084521707
       vertices: []
       indices: 
       edges: []
@@ -478,10 +478,10 @@ TextureImporter:
       name: witch1_standing_18
       rect:
         serializedVersion: 2
-        x: 2034
+        x: 1944
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -489,8 +489,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edaf9bc166a127046baee5e90295870d
-      internalID: -69744578
+      spriteID: 3ba96a26d8f91df41b3d1d0eccca790c
+      internalID: -1688732725
       vertices: []
       indices: 
       edges: []
@@ -499,10 +499,10 @@ TextureImporter:
       name: witch1_standing_19
       rect:
         serializedVersion: 2
-        x: 2147
+        x: 2052
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -510,8 +510,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e52d294561db2243a481806052d2691
-      internalID: -1422603862
+      spriteID: 80c84399b58b9be4a9de5d8244772a5f
+      internalID: -60959763
       vertices: []
       indices: 
       edges: []
@@ -520,10 +520,10 @@ TextureImporter:
       name: witch1_standing_20
       rect:
         serializedVersion: 2
-        x: 2260
+        x: 2160
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -531,8 +531,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 390c92f2411f4a14b90cb316588806d4
-      internalID: -773375127
+      spriteID: 4c0a2f5c4bca2874f864855a86aa5784
+      internalID: 1329846123
       vertices: []
       indices: 
       edges: []
@@ -541,10 +541,10 @@ TextureImporter:
       name: witch1_standing_21
       rect:
         serializedVersion: 2
-        x: 2373
+        x: 2268
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -552,8 +552,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70a2923ca5237fd499556d026f24c0a2
-      internalID: 1512081010
+      spriteID: 3c109a6f29601584aa533a4d1677f996
+      internalID: 1949977982
       vertices: []
       indices: 
       edges: []
@@ -562,10 +562,10 @@ TextureImporter:
       name: witch1_standing_22
       rect:
         serializedVersion: 2
-        x: 2486
+        x: 2376
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -573,8 +573,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb728fea040aecb44802da6aaa9f9ee9
-      internalID: -1245075576
+      spriteID: c726d9bd90e18854d911cac465931c07
+      internalID: -2089746758
       vertices: []
       indices: 
       edges: []
@@ -583,10 +583,10 @@ TextureImporter:
       name: witch1_standing_23
       rect:
         serializedVersion: 2
-        x: 2599
+        x: 2484
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -594,8 +594,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26c5950bdb189394fa87578289b5152a
-      internalID: 44293308
+      spriteID: b4daf8bd0aa76e5428ef8d9c8344baa3
+      internalID: 22760981
       vertices: []
       indices: 
       edges: []
@@ -604,10 +604,10 @@ TextureImporter:
       name: witch1_standing_24
       rect:
         serializedVersion: 2
-        x: 2712
+        x: 2592
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -615,8 +615,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aca011e2fff0bc045bd84bdea5e7f7a0
-      internalID: -339377946
+      spriteID: aef5063d975e57e4db48849a2b463eb7
+      internalID: -1076478264
       vertices: []
       indices: 
       edges: []
@@ -625,10 +625,10 @@ TextureImporter:
       name: witch1_standing_25
       rect:
         serializedVersion: 2
-        x: 2825
+        x: 2700
         y: 0
-        width: 113
-        height: 153
+        width: 108
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -636,8 +636,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3caf406d7a774041be4f29b8cc0e1d2
-      internalID: -1185655725
+      spriteID: 3aa078e6be909a04eb36cff207080bcf
+      internalID: -99547670
       vertices: []
       indices: 
       edges: []
@@ -653,32 +653,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      witch1_standing_0: -917168547
-      witch1_standing_1: 1908197516
-      witch1_standing_10: -1754008463
-      witch1_standing_11: -242237827
-      witch1_standing_12: -152938258
-      witch1_standing_13: 1450857112
-      witch1_standing_14: -1555354378
-      witch1_standing_15: -322483360
-      witch1_standing_16: 1612495715
-      witch1_standing_17: 1264001204
-      witch1_standing_18: -69744578
-      witch1_standing_19: -1422603862
-      witch1_standing_2: -1308013138
-      witch1_standing_20: -773375127
-      witch1_standing_21: 1512081010
-      witch1_standing_22: -1245075576
-      witch1_standing_23: 44293308
-      witch1_standing_24: -339377946
-      witch1_standing_25: -1185655725
-      witch1_standing_3: 862697865
-      witch1_standing_4: 1631231853
-      witch1_standing_5: -651625650
-      witch1_standing_6: -1189346182
-      witch1_standing_7: 311935781
-      witch1_standing_8: 20088450
-      witch1_standing_9: 278888605
+      witch1_standing_0: -1971567436
+      witch1_standing_1: -1116905474
+      witch1_standing_10: -1259433803
+      witch1_standing_11: 164501898
+      witch1_standing_12: -83664592
+      witch1_standing_13: -1128598640
+      witch1_standing_14: -1664955233
+      witch1_standing_15: 109129029
+      witch1_standing_16: -831034056
+      witch1_standing_17: -1084521707
+      witch1_standing_18: -1688732725
+      witch1_standing_19: -60959763
+      witch1_standing_2: 1529343725
+      witch1_standing_20: 1329846123
+      witch1_standing_21: 1949977982
+      witch1_standing_22: -2089746758
+      witch1_standing_23: 22760981
+      witch1_standing_24: -1076478264
+      witch1_standing_25: -99547670
+      witch1_standing_3: -1366616666
+      witch1_standing_4: 807070375
+      witch1_standing_5: -2146325946
+      witch1_standing_6: -267246225
+      witch1_standing_7: 879812609
+      witch1_standing_8: -1765093412
+      witch1_standing_9: -869286737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

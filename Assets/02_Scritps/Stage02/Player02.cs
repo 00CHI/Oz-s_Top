@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player02 : MonoBehaviour
 {
@@ -10,10 +12,14 @@ public class Player02 : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
 
+    bool isPortal04;
+
     //Sprite_Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
+
+    public GameObject inventoryPanel;
 
     //Variable
     //private float h = Input.GetAxisRaw("Horizontal");
@@ -91,6 +97,11 @@ public class Player02 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.E) && isPortal04)
+        {
+            SceneManager.LoadScene("Stage4");
+        }
     }
     void FixedUpdate()
     {
@@ -145,6 +156,21 @@ public class Player02 : MonoBehaviour
             anim.SetBool("isRun", true);
             anim.SetBool("isIdle", true);
 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal04"))
+        {
+            isPortal04 = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal04"))
+        {
+            isPortal04 = false;
         }
     }
 }

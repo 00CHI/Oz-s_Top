@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Player01 : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class Player01 : MonoBehaviour
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
+    public int jumpCount = 0;
+
+    private bool isVerticalPlatform = false;
+    bool isPortal03;
 
     //Sprite_Anim
     Rigidbody2D rigid;
@@ -40,6 +46,8 @@ public class Player01 : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
         {
             anim.SetBool("isJumpdown", true);
+            anim.SetBool("isRun", true);
+
         }
 
         //Run Animation
@@ -57,18 +65,28 @@ public class Player01 : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
         }
         //Jump /jump limited == && !anim.GetBool("isJump")
-        if (Input.GetButtonDown("Jump") && !anim.GetBool("isJump") && !anim.GetBool("isJumpdown"))
+        if (Input.GetButtonDown("Jump") && !anim.GetBool("isJump") && jumpCount == 0) ///!anim.GetBool("isJumpdown")
         {
+            jumpCount = 1;
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isRun", false);
 
             //Jump Animation
             anim.SetBool("isJump", true);
+
         }
 
-        //Jump Down
-        if (rigid.velocity.y < -0.01f)
+
+        // Jump down -> Idle 
+        if (isVerticalPlatform )
         {
+            anim.SetBool("isJumpdown", false);
+
+        }
+        //Jump Down
+        if (rigid.velocity.y < 0f)
+        {
+
             //false anim
             anim.SetBool("isJump", false);
             anim.SetBool("isRun", false);
@@ -79,8 +97,8 @@ public class Player01 : MonoBehaviour
 
             //Gravity Ctrl
             rigid.AddForce(Vector2.down * jumpDown * Time.deltaTime);
+            jumpCount = 0;
         }
-        // Jump down -> Idle 
         else
         {
             anim.SetBool("isJumpdown", false);
@@ -96,7 +114,13 @@ public class Player01 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+        if (Input.GetKeyDown(KeyCode.E) && isPortal03)
+        {
+            SceneManager.LoadScene("Stage2");
+        }
     }
+
+
 
     void FixedUpdate()
     {
@@ -118,39 +142,34 @@ public class Player01 : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //Box Tag
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            float yGap = transform.position.y - collision.gameObject.transform.position.y;
-            //Debug.LogError("GAP: " + yGap);
 
-            if (yGap < 1)
-            {
-                anim.SetBool("isPull", true);
-                anim.SetBool("isRun", false);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJump", false);
-            }
-            else
-            {
-                anim.SetBool("isJump", false);
-                anim.SetBool("isPull", false);
-                anim.SetBool("isRun", true);
-                anim.SetBool("isIdle", true);
-            }
+        if (collision.gameObject.CompareTag("VerticalPlatform"))
+        {
+            isVerticalPlatform = true;
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //Box Tag
-        if (collision.gameObject.CompareTag("Box"))
+        if (collision.gameObject.CompareTag("VerticalPlatform"))
         {
-            anim.SetBool("isJump", false);
-            anim.SetBool("isPull", false);
-            anim.SetBool("isRun", true);
-            anim.SetBool("isIdle", true);
+            isVerticalPlatform = false;
+        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal03"))
+        {
+            isPortal03 = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal03"))
+        {
+            isPortal03 = false;
         }
     }
 }

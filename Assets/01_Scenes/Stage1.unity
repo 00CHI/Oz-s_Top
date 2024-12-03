@@ -1157,9 +1157,10 @@ GameObject:
   m_Component:
   - component: {fileID: 349452468}
   - component: {fileID: 349452469}
+  - component: {fileID: 349452470}
   m_Layer: 0
   m_Name: tower_map_clear_door_1F (1)
-  m_TagString: Untagged
+  m_TagString: Portal03
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1231,6 +1232,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &349452470
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349452467}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.37, y: 2.15}
+    newSize: {x: 1.37, y: 2.15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.37, y: 2.15}
+  m_EdgeRadius: 0
 --- !u!1 &356809495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,7 +4075,7 @@ GameObject:
   - component: {fileID: 1221667510}
   m_Layer: 0
   m_Name: CharacterPlatform_Short (1)
-  m_TagString: Untagged
+  m_TagString: VerticalPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9838,11 +9884,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1649778805091648699, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.21
+      value: -7.55
       objectReference: {fileID: 0}
     - target: {fileID: 1649778805091648699, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.18
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 1649778805091648699, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9915,6 +9961,7 @@ MonoBehaviour:
   jumpDown: 10
   jumpPower: 11
   maxSpeed: 5
+  jumpCount: 0
 --- !u!4 &1742904948 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1649778805091648699, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}

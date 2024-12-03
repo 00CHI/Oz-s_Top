@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Player04 : MonoBehaviour
 {
     //Scripts
-
+    public NPC04_01 npc04;
+    public NPC04_02 npc04_2;
 
     //Player move
     public float speed;
@@ -39,6 +41,9 @@ public class Player04 : MonoBehaviour
     public bool getScissor04 = false;
     public bool getMagicScissor = false;
 
+    bool isLight;
+    bool isPortal5;
+
 
     public GameObject scissor01;
     public GameObject scissor02;
@@ -54,7 +59,7 @@ public class Player04 : MonoBehaviour
     public GameObject inventoryPanel;
     public GameObject mergeButton;
 
-    public GameObject magicTree;
+    public GameObject lightHand;
 
 
 
@@ -79,6 +84,9 @@ public class Player04 : MonoBehaviour
         Image_scissor04.gameObject.SetActive(false);
         Image_MagicScissor.gameObject.SetActive(false);
 
+        lightHand.SetActive(false);
+
+
         //textItemName.gameObject.SetActive(false);
         //textItemDesc.gameObject.SetActive(false);
         prompText.gameObject.SetActive(false);
@@ -86,7 +94,10 @@ public class Player04 : MonoBehaviour
 
     void Start()
     {
-        h = Input.GetAxisRaw("Horizontal");
+        //float h = npc04.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        //float j = npc04.isAction ? 0 : Input.GetAxisRaw("Jump");
+
+        h = Input.GetAxisRaw("Horizontal");     
         j = Input.GetAxisRaw("Jump");
     }
 
@@ -157,12 +168,15 @@ public class Player04 : MonoBehaviour
             anim.SetBool("isIdle", true);
         }
 
+        bool moveLeft = npc04.isAction ? false : Input.GetKeyDown(KeyCode.LeftArrow);
+        bool moveRight = npc04.isAction ? false : Input.GetKeyDown(KeyCode.RightArrow);
+
         //Derection flip Sprite //Run Anim
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (moveLeft)
         {
             spriteRenderer.flipX = true;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (moveRight)
         {
             spriteRenderer.flipX = false;
         }
@@ -203,7 +217,6 @@ public class Player04 : MonoBehaviour
             scissor03.gameObject.SetActive(false);
             Image_scissor03.gameObject.SetActive(true);
 
-
         }
         if (Input.GetKeyDown(KeyCode.E) && tagScissor04 == true)
         {
@@ -223,13 +236,18 @@ public class Player04 : MonoBehaviour
             mergeButton.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && getMagicScissor == true )
+        if (Input.GetKeyDown(KeyCode.E) && isLight)
         {
+            lightHand.SetActive(true);
+            npc04_2.light.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.E) && isPortal5)
+        {
+            SceneManager.LoadScene("Stage5");
 
         }
-
         //Inventory
-        if (Input.GetKeyDown(KeyCode.Tab) && inventoryCount == 0)
+        if (Input.GetKeyDown(KeyCode.Tab) && inventoryCount == 0 && npc04.isTalk == false)
         {
             inventoryPanel.gameObject.SetActive(true);
             Cursor.visible = true;
@@ -237,7 +255,7 @@ public class Player04 : MonoBehaviour
             inventoryCount = 1;
 
         }
-        else if (Input.GetKeyUp(KeyCode.Tab))
+        else if (Input.GetKeyUp(KeyCode.Tab) && npc04.isTalk && npc04.isTalk == false)
         {
             inventoryPanel.gameObject.SetActive(false);
             Cursor.visible = false;
@@ -248,7 +266,8 @@ public class Player04 : MonoBehaviour
     void FixedUpdate()
     {
         //Move maxSpeed
-        float h = Input.GetAxisRaw("Horizontal");
+        //float h = Input.GetAxisRaw("Horizontal");
+        float h = npc04.isAction ? 0 : Input.GetAxisRaw("Horizontal");
 
         rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
 
@@ -323,6 +342,16 @@ public class Player04 : MonoBehaviour
             tagScissor04 = true;
             SetPrompText();
         }
+
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            isLight = true;
+            SetPrompText();
+        }
+        if (collision.gameObject.CompareTag("Portal05"))
+        {
+            isPortal5 = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -345,6 +374,15 @@ public class Player04 : MonoBehaviour
         {
             tagScissor04 = false;
             OutPrompText();
+        }
+        if (collision.gameObject.CompareTag("Light"))
+        {
+            isLight = false;
+            OutPrompText();
+        }
+        if (collision.gameObject.CompareTag("Portal05"))
+        {
+            isPortal5 = false;
         }
     }
 

@@ -5,8 +5,9 @@ using UnityEngine;
 public enum TILE_TYPE
 {
     RED,
-    GREEN, 
-    BLUE, 
+    YELLOW,
+    GREEN,
+    BLUE,
     PURPLE,
     BLACK,
     NONE
@@ -26,7 +27,6 @@ public enum MOVE_TYPE
 public class Tile : MonoBehaviour
 {
     public RuneStone runeStone;
-    //public RuneStone runeStone02;
     private Vector3 TilePosition;
 
     public Transform[] TRPOS;
@@ -35,20 +35,27 @@ public class Tile : MonoBehaviour
     public TILE_TYPE TILE_TYPE;
     public MOVE_TYPE MOVE_TYPE;
 
-    
+    public int runeStoneNumber;
+
     public float distance;
     public float moveSpeed;
 
     //eTYPE Type = eTYPE.NONE_TILE;
     TILE_TYPE Tile_Type = TILE_TYPE.NONE;
-
     RUENSTONE_TYPE Rune_Type = RUENSTONE_TYPE.NONE;
+
+
+
 
     // Start is called before the first frame update
     void Awake()
     {
         TilePosition = transform.position;
-        //runeStone = GetComponent<RuneStone>();GetComponent는 자식오브젝트에 있는 컴포넌트만 가져올 수 있음.
+        //runeStone = GetComponent<RuneStone>();
+
+        runeStoneNumber = runeStone.runeStoneNumber;
+        //runeStone = colorRuneStone[runeStoneNumber].GetComponent<RuneStone>();
+  
     }
 
     // Update is called once per frame
@@ -59,6 +66,9 @@ public class Tile : MonoBehaviour
             return;
         }
 
+       
+
+        //Direct
         if (runeStone.ContinueRuen == (RUENSTONE_TYPE)TILE_TYPE)// && runeStone.isKeyE == true
         {
             switch (MOVE_TYPE)
@@ -177,6 +187,7 @@ public class Tile : MonoBehaviour
 
             }
         }
+
        
     }
 

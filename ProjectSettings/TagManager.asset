@@ -17,6 +17,12 @@ TagManager:
   - MagicTree
   - Portal01
   - Portal02
+  - VerticalPlatform
+  - Portal03
+  - Portal04
+  - Light
+  - Portal05
+  - Portal06
   layers:
   - Default
   - TransparentFX
@@ -26,7 +32,7 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - 
+  - NPC
   - 
   - 
   - 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player05: MonoBehaviour
 {
+    public NPC05 npc05;
+
     //Player move
     public float speed;
     public float jumpDown;
@@ -101,7 +103,9 @@ public class Player05: MonoBehaviour
     void FixedUpdate()
     {
         //Move maxSpeed
-        float h = Input.GetAxisRaw("Horizontal");
+        //float h = Input.GetAxisRaw("Horizontal");
+        float h = npc05.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+
 
         rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
 

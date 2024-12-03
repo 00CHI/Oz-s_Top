@@ -6,11 +6,11 @@ using UnityEngine;
 public enum RUENSTONE_TYPE
 {
     RED,
+    YELLOW,
     GREEN,
     BLUE,
     PURPLE,
     BLACK,
-
     NONE
 }
 public enum LEFT_RIGHT
@@ -19,29 +19,67 @@ public enum LEFT_RIGHT
     RIGHT,
     NONE
 }
+public enum RUNESTONE_NUMBER
+{
+    FIRST,
+    SECOND,
+    THIRD,
+    FOURTH,
+    NONE
+}
 
 public class RuneStone : MonoBehaviour
 {
 
     public RUENSTONE_TYPE RUENSTONE_TYPE;
+    public RUNESTONE_NUMBER RUNESTONE_NUMBER;
 
-    public int count = 0;
+
+    public int runeStoneNumber;
 
     public bool isPlayer;
     //public bool isKeyE;
 
     public TextMeshProUGUI activityText;
 
-    public RUENSTONE_TYPE ContinueRuen;
-    public bool MoveLeft;
 
+    public RUENSTONE_TYPE ContinueRuen;
+    public RUNESTONE_NUMBER numberRuen;
+
+    public bool MoveLeft;
+ 
     // Start is called before the first frame update
     void Awake()
     {
         isPlayer = false;
+        MoveLeft = false;
+
 
         ContinueRuen = RUENSTONE_TYPE.NONE;
-        MoveLeft = false;
+        numberRuen = RUNESTONE_NUMBER.NONE;
+
+        switch (numberRuen)
+        {
+            case RUNESTONE_NUMBER.FIRST:
+
+                runeStoneNumber = 0;
+                break;
+            case RUNESTONE_NUMBER.SECOND:
+
+                runeStoneNumber = 1;
+                break;
+            case RUNESTONE_NUMBER.THIRD:
+
+                runeStoneNumber = 2;
+                break;
+            case RUNESTONE_NUMBER.FOURTH:
+
+                runeStoneNumber = 3;
+                break;
+
+        }
+
+
     }
 
     // Update is called once per frame
@@ -52,7 +90,7 @@ public class RuneStone : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ContinueRuen = RUENSTONE_TYPE;
-               
+
                 MoveLeft = !MoveLeft;
             }
         }

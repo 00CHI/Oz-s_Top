@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 17216856}
   - component: {fileID: 17216854}
   m_Layer: 0
-  m_Name: 01_Red_Runestone01
+  m_Name: 01_Red_Runestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -310,10 +310,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 0
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 1731180210}
   ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!1 &83745107
 GameObject:
@@ -971,10 +974,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 1
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 0}
   ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!1 &278871552
 GameObject:
@@ -1875,12 +1881,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeStone: {fileID: 17216859}
+  runeStone: []
+  colorRuneStone:
+  - {fileID: 17216853}
+  - {fileID: 1918107525}
   TRPOS:
   - {fileID: 357529863}
   - {fileID: 1391852904}
   TILE_TYPE: 0
   MOVE_TYPE: 1
+  runeStoneNumber: 0
   distance: 1.5
   moveSpeed: 2
 --- !u!1 &641889650
@@ -2423,12 +2433,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeStone: {fileID: 1880501864}
+  runeStone: []
+  colorRuneStone:
+  - {fileID: 1880501857}
   TRPOS:
   - {fileID: 1011651671}
   - {fileID: 891597324}
   TILE_TYPE: 1
   MOVE_TYPE: 3
+  runeStoneNumber: 0
   distance: 1.5
   moveSpeed: 2
 --- !u!1 &760129890
@@ -2678,12 +2691,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeStone: {fileID: 17216859}
+  runeStone: []
+  colorRuneStone:
+  - {fileID: 17216853}
+  - {fileID: 1918107525}
   TRPOS:
   - {fileID: 2137461581}
   - {fileID: 1197857859}
   TILE_TYPE: 0
   MOVE_TYPE: 3
+  runeStoneNumber: 0
   distance: 1.5
   moveSpeed: 1
 --- !u!1 &926956262
@@ -3339,10 +3356,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 1
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 0}
   ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!1 &1191397461
 GameObject:
@@ -3487,12 +3507,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeStone: {fileID: 17216859}
+  runeStone:
+  - {fileID: 17216859}
+  colorRuneStone:
+  - {fileID: 17216853}
+  - {fileID: 1918107525}
   TRPOS:
   - {fileID: 860108093}
   - {fileID: 6628102}
   TILE_TYPE: 0
   MOVE_TYPE: 0
+  runeStoneNumber: 0
   distance: 1.5
   moveSpeed: 2
 --- !u!1 &1197857858
@@ -7597,11 +7622,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dc03588487f4749858517473f67468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RUENSTONE_TYPE: 0
+  RUENSTONE_TYPE: 1
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 0}
-  ContinueRuen: 0
+  ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!114 &1880501864
 MonoBehaviour:
@@ -7616,10 +7644,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 1
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 1731180210}
   ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!1 &1885268073
 GameObject:
@@ -7773,7 +7804,7 @@ GameObject:
   - component: {fileID: 1918107528}
   - component: {fileID: 1918107527}
   m_Layer: 0
-  m_Name: 01_Red_Runestone01 (1)
+  m_Name: 02_Red_Runestone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7863,10 +7894,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 0
+  RUNESTONE_NUMBER: 1
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 1731180210}
   ContinueRuen: 5
+  numberRuen: 0
   MoveLeft: 0
 --- !u!212 &1918107530
 SpriteRenderer:
@@ -8147,12 +8181,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a8a8676293d4f4b851b2d987b7f08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runeStone: {fileID: 17216859}
+  runeStone: []
+  colorRuneStone:
+  - {fileID: 17216853}
+  - {fileID: 1918107525}
   TRPOS:
   - {fileID: 1000055195}
   - {fileID: 1520967333}
   TILE_TYPE: 0
   MOVE_TYPE: 2
+  runeStoneNumber: 0
   distance: 1.5
   moveSpeed: 1
 --- !u!1 &2045891729
@@ -8485,10 +8523,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RUENSTONE_TYPE: 0
+  RUNESTONE_NUMBER: 0
   count: 0
+  runeStoneNumber: 0
   isPlayer: 0
   activityText: {fileID: 0}
   ContinueRuen: 0
+  numberRuen: 0
   MoveLeft: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

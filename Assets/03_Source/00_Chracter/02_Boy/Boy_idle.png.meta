@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boy_idle_0
+      name: boy_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3aaca9b2fd47f3e44be06805403f2dab
-      internalID: -1635787496
+      spriteID: 2d73485beb4f1bc418956f7bb3b756eb
+      internalID: 960777082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_1
+      name: boy_idle_1
       rect:
         serializedVersion: 2
         x: 80
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e65f5ed3b3269124e9bfb6c2bdc94aea
-      internalID: -163441744
+      spriteID: 57964401cba7e554581eb1ea26271084
+      internalID: -1437093602
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_2
+      name: boy_idle_2
       rect:
         serializedVersion: 2
         x: 160
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab337f8bdde4b94478e1d033a8bfc79d
-      internalID: 1127938078
+      spriteID: b51080f36453ed44f88ebc8aab815de1
+      internalID: -152563784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_3
+      name: boy_idle_3
       rect:
         serializedVersion: 2
         x: 240
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04c65d74bd73f624fac01d2e492e0554
-      internalID: 1579317924
+      spriteID: 106ca6c80df85ce4995572ccb493ec54
+      internalID: 240500843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_4
+      name: boy_idle_4
       rect:
         serializedVersion: 2
         x: 320
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a3e1bb36bdca1342baaa9e693f26829
-      internalID: 1009946618
+      spriteID: f49f6cfc21f74154e89e3f4d933cd236
+      internalID: 1579177614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_5
+      name: boy_idle_5
       rect:
         serializedVersion: 2
         x: 400
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30e710ac6be5880429dc9f8e1d89bde6
-      internalID: 1827340498
+      spriteID: a07c1ddf7960a2343ac0dfcd698ba9fa
+      internalID: 175924508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_6
+      name: boy_idle_6
       rect:
         serializedVersion: 2
         x: 480
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5779125607c45d4db4bc92f857c3cb0
-      internalID: 335868964
+      spriteID: 73421b2bbefe506438c57dd62adcef81
+      internalID: 916276069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_7
+      name: boy_idle_7
       rect:
         serializedVersion: 2
         x: 560
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 556accc441530a646829571c2588c37e
-      internalID: 1655856521
+      spriteID: 964cee4259fbda74a879a109002b65c9
+      internalID: 1887956546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_8
+      name: boy_idle_8
       rect:
         serializedVersion: 2
         x: 640
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6f2b70adf251324d90d07ddfcddbad1
-      internalID: 1879154041
+      spriteID: 4f936b07d71d2764192156dbedbed67b
+      internalID: -325381222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_9
+      name: boy_idle_9
       rect:
         serializedVersion: 2
         x: 720
@@ -300,14 +300,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee8f547769a9aa4d9473010db41f04d
-      internalID: 843591771
+      spriteID: 118b6d96571d5ee4e870ffb18176fa1f
+      internalID: 81825494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_10
+      name: boy_idle_10
       rect:
         serializedVersion: 2
         x: 800
@@ -321,14 +321,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8ea7cb1eccd83d4d9a43d0f091d09ec
-      internalID: 1776961757
+      spriteID: a7d379485cd7de34a91397527cef6127
+      internalID: -622326502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boy_idle_11
+      name: boy_idle_11
       rect:
         serializedVersion: 2
         x: 880
@@ -342,8 +342,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 006411bd8d64e5d42b8e7a8b397804fe
-      internalID: -768147631
+      spriteID: 1cdfd0890c096424588683ec4543f010
+      internalID: -82397592
       vertices: []
       indices: 
       edges: []
@@ -359,18 +359,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boy_idle_0: -1635787496
-      Boy_idle_1: -163441744
-      Boy_idle_10: 1776961757
-      Boy_idle_11: -768147631
-      Boy_idle_2: 1127938078
-      Boy_idle_3: 1579317924
-      Boy_idle_4: 1009946618
-      Boy_idle_5: 1827340498
-      Boy_idle_6: 335868964
-      Boy_idle_7: 1655856521
-      Boy_idle_8: 1879154041
-      Boy_idle_9: 843591771
+      boy_idle_0: 960777082
+      boy_idle_1: -1437093602
+      boy_idle_10: -622326502
+      boy_idle_11: -82397592
+      boy_idle_2: -152563784
+      boy_idle_3: 240500843
+      boy_idle_4: 1579177614
+      boy_idle_5: 175924508
+      boy_idle_6: 916276069
+      boy_idle_7: 1887956546
+      boy_idle_8: -325381222
+      boy_idle_9: 81825494
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

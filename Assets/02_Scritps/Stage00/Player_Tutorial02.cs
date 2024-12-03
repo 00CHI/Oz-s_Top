@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Player_Tutorial02 : MonoBehaviour
+public class Player_Tutirial02 : MonoBehaviour
 {
     //Player move
     public float speed;
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
+
+    public GameObject inventoryPanel;
 
     //Sprite_Anim
     Rigidbody2D rigid;
@@ -21,7 +23,7 @@ public class Player_Tutorial02 : MonoBehaviour
     private float h = 0;
     private float j = 0;
 
-    private bool isPortal02;
+    bool isPortal02;
 
     // Start is called before the first frame update
     void Awake()
@@ -101,10 +103,26 @@ public class Player_Tutorial02 : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+        }
+        else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            inventoryPanel.gameObject.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         if (Input.GetKeyDown(KeyCode.E) && isPortal02)
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("Stage1");
         }
+
+
     }
 
     void FixedUpdate()
@@ -125,51 +143,19 @@ public class Player_Tutorial02 : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        //Box Tag
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            float yGap = transform.position.y - collision.gameObject.transform.position.y;
-            //Debug.LogError("GAP: " + yGap);
-
-            if (yGap < 1)
-            {
-                anim.SetBool("isPull", true);
-                anim.SetBool("isRun", false);
-                anim.SetBool("isIdle", false);
-                anim.SetBool("isJump", false);
-            }
-            else
-            {
-                anim.SetBool("isJump", false);
-                anim.SetBool("isPull", false);
-                anim.SetBool("isRun", true);
-                anim.SetBool("isIdle", true);
-            }
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //Box Tag
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            anim.SetBool("isJump", false);
-            anim.SetBool("isPull", false);
-            anim.SetBool("isRun", true);
-            anim.SetBool("isIdle", true);
-
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Portal02"))
+        if ( collision.gameObject.CompareTag("Portal02"))
         {
             isPortal02 = true;
         }
-
-
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal02"))
+        {
+            isPortal02 = false;
+        }
+    }
+
 }
