@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Player00 : MonoBehaviour
+public abstract partial class Player_Practice01 : MonoBehaviour
 {
+    //NPC Scropt
+    public NPC npc00;
+
     //Player move
     public float speed;
     public float jumpDown;
     public float jumpPower;
     public float maxSpeed;
+
+    //Portal
+    bool isPortal01;
+
 
     //Sprite_Anim
     Rigidbody2D rigid;
@@ -16,14 +24,21 @@ public class Player00 : MonoBehaviour
     Animator anim;
 
     //Variable
-    private float h = Input.GetAxisRaw("Horizontal");
-    private float j = Input.GetAxisRaw("Jump");
+    private float h = 0;
+    private float j = 0;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
+        h = Input.GetAxisRaw("Horizontal");
+        j = Input.GetAxisRaw("Jump");
     }
 
     // Update is called once per frame
@@ -89,12 +104,19 @@ public class Player00 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        //Portal_Tag
+        if (Input.GetKeyDown(KeyCode.E) && isPortal01)
+        {
+            SceneManager.LoadScene("Stage0_1");
+        }
     }
 
     void FixedUpdate()
     {
-        //Move maxSpeed
-        float h = Input.GetAxisRaw("Horizontal");
+        //isAction
+        float h = npc00.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+
 
         rigid.AddForce(Vector2.right * h * speed, ForceMode2D.Impulse);
 
@@ -109,5 +131,56 @@ public class Player00 : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //Box Tag
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            float yGap = transform.position.y - collision.gameObject.transform.position.y;
+            //Debug.LogError("GAP: " + yGap);
 
+            if (yGap < 1)
+            {
+                anim.SetBool("isPull", true);
+                anim.SetBool("isRun", false);
+                anim.SetBool("isIdle", false);
+                anim.SetBool("isJump", false);
+            }
+            else
+            {
+                anim.SetBool("isJump", false);
+                anim.SetBool("isPull", false);
+                anim.SetBool("isRun", true);
+                anim.SetBool("isIdle", true);
+            }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //Box Tag
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            anim.SetBool("isJump", false);
+            anim.SetBool("isPull", false);
+            anim.SetBool("isRun", true);
+            anim.SetBool("isIdle", true);
+
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (npc00.talkCount >= 17 && collision.gameObject.CompareTag("Portal01"))
+        {
+            isPortal01 = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (npc00.talkCount < 17 || collision.gameObject.CompareTag("Portal01"))
+        {
+            isPortal01 = false;
+        }
+    }
 }

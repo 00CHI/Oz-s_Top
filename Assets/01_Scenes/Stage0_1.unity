@@ -787,6 +787,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 94492609}
+    - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 94492607}
   m_SourcePrefab: {fileID: 100100000, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
 --- !u!1 &94492606 stripped
@@ -801,7 +804,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94492606}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fc8b21ed422c9947864ead2afd5101e, type: 3}
   m_Name: 
@@ -810,12 +813,27 @@ MonoBehaviour:
   jumpDown: 10
   jumpPower: 10
   maxSpeed: 5
-  inventoryPanel: {fileID: 2092563651}
 --- !u!4 &94492608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1649778805091648699, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
   m_PrefabInstance: {fileID: 94492605}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &94492609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94492606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f536f4bc25d3a6469f7e2b1edf8fd5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpDown: 10
+  jumpPower: 10
+  maxSpeed: 5
 --- !u!1001 &117692733
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2422,6 +2440,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &377580854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377580855}
+  m_Layer: 0
+  m_Name: ---------Manager---------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &377580855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377580854}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &391508886
 GameObject:
   m_ObjectHideFlags: 0
@@ -4824,6 +4873,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1305629080}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &720957447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720957449}
+  - component: {fileID: 720957448}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &720957448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720957447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6524038e49d5784b927d9546327134d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 2092563651}
+--- !u!4 &720957449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720957447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723614928
@@ -14726,7 +14820,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1342585818}
   - {fileID: 310130140}
+  - {fileID: 377580855}
   - {fileID: 888073672}
+  - {fileID: 720957449}
   - {fileID: 94492605}
   - {fileID: 73482364}
   - {fileID: 1868979289}

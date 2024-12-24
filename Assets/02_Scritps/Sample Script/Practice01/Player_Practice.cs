@@ -1,29 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Player00 : MonoBehaviour
+
+abstract partial class PlayerPractice : MonoBehaviour
 {
+
     //Player move
     public float speed;
     public float jumpDown;
-    public float jumpPower;
     public float maxSpeed;
+
+    protected float jumpPower;
+
+    protected bool isKeyE;
 
     //Sprite_Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
-    Animator anim;
+    protected Animator anim;
 
     //Variable
-    private float h = Input.GetAxisRaw("Horizontal");
-    private float j = Input.GetAxisRaw("Jump");
+    private float h = 0;
+    private float j = 0;
 
     // Start is called before the first frame update
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
+        h = Input.GetAxisRaw("Horizontal");
+        j = Input.GetAxisRaw("Jump");
     }
 
     // Update is called once per frame
@@ -89,6 +102,11 @@ public class Player00 : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            isKeyE = true;
+        }
     }
 
     void FixedUpdate()
@@ -108,6 +126,45 @@ public class Player00 : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
         }
     }
+}
 
 
+ abstract partial class NextStage : PlayerPractice
+{
+    //Portal
+    bool isPortal02;
+    bool isPortal03;
+    bool isPortal04;
+    bool isPortal05;
+    bool isPortal06;
+    bool isPortal07;
+
+    private void Update()
+    {
+        if (isKeyE && isPortal02)
+        {
+            SceneManager.LoadScene("Stage1");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal02"))
+        {
+            isPortal02 = true;
+        }
+
+        if (collision.gameObject.CompareTag("Portal03"))
+        {
+            isPortal03 = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal02"))
+        {
+            isPortal03 = false;
+        }
+    }
 }

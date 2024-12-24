@@ -4337,23 +4337,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
   m_PrefabInstance: {fileID: 1941493410}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &799112857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799112850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a2e0719fd938342ad2fe9fc1afa1c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpDown: 10
-  jumpPower: 10
-  maxSpeed: 5
-  npc: {fileID: 1372486227}
 --- !u!1 &803573062
 GameObject:
   m_ObjectHideFlags: 0
@@ -12053,8 +12036,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1941493422}
+    - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 799112857}
+      addedObject: {fileID: 1941493417}
     - targetCorrespondingSourceObject: {fileID: 7228567572976740820, guid: ac7a5632628ea3846a21158d8539d4f9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1941493416}
@@ -12078,6 +12064,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   isNpc: 1
+--- !u!114 &1941493417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799112850}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a2e0719fd938342ad2fe9fc1afa1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpDown: 10
+  jumpPower: 10
+  maxSpeed: 5
+  npc: {fileID: 1372486227}
+--- !u!114 &1941493422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799112850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d7ec00b71c275f42a5be895d1edde21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc00: {fileID: 1372486227}
+  speed: 5
+  jumpDown: 10
+  jumpPower: 10
+  maxSpeed: 5
 --- !u!1 &1953921862
 GameObject:
   m_ObjectHideFlags: 0

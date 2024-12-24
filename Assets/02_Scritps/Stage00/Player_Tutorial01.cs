@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Player_Tutorial01 : MonoBehaviour
 {
-
-
-
     //Player move
     public float speed;
     public float jumpDown;

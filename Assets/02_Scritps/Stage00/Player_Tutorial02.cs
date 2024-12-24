@@ -12,8 +12,6 @@ public class Player_Tutirial02 : MonoBehaviour
     public float jumpPower;
     public float maxSpeed;
 
-    public GameObject inventoryPanel;
-
     //Sprite_Anim
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
@@ -103,19 +101,6 @@ public class Player_Tutirial02 : MonoBehaviour
             spriteRenderer.flipX = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            inventoryPanel.gameObject.SetActive(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-
-        }
-        else if (Input.GetKeyUp(KeyCode.Tab))
-        {
-            inventoryPanel.gameObject.SetActive(false);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
 
         if (Input.GetKeyDown(KeyCode.E) && isPortal02)
         {
@@ -157,5 +142,6 @@ public class Player_Tutirial02 : MonoBehaviour
             isPortal02 = false;
         }
     }
+
 
 }
